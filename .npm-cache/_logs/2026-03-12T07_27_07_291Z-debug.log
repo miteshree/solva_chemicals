@@ -1,0 +1,34 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'dev' ]
+2 info using npm@6.13.4
+3 info using node@v12.16.1
+4 verbose run-script [ 'predev', 'dev', 'postdev' ]
+5 info lifecycle solva_chemicals@0.1.0~predev: solva_chemicals@0.1.0
+6 info lifecycle solva_chemicals@0.1.0~dev: solva_chemicals@0.1.0
+7 verbose lifecycle solva_chemicals@0.1.0~dev: unsafe-perm in lifecycle true
+8 verbose lifecycle solva_chemicals@0.1.0~dev: PATH: /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/msheth/solva_chemicals/solva_chemicals/node_modules/.bin:/Users/msheth/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/msheth/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/share/dotnet:~/.dotnet/tools:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/msheth/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/msheth/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/Users/msheth/anaconda3/bin:/Users/msheth/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.8/bin
+9 verbose lifecycle solva_chemicals@0.1.0~dev: CWD: /Users/msheth/solva_chemicals/solva_chemicals
+10 silly lifecycle solva_chemicals@0.1.0~dev: Args: [ '-c', 'vite' ]
+11 silly lifecycle solva_chemicals@0.1.0~dev: Returned: code: 1  signal: null
+12 info lifecycle solva_chemicals@0.1.0~dev: Failed to exec dev script
+13 verbose stack Error: solva_chemicals@0.1.0 dev: `vite`
+13 verbose stack Exit status 1
+13 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:332:16)
+13 verbose stack     at EventEmitter.emit (events.js:311:20)
+13 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
+13 verbose stack     at ChildProcess.emit (events.js:311:20)
+13 verbose stack     at maybeClose (internal/child_process.js:1021:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:286:5)
+14 verbose pkgid solva_chemicals@0.1.0
+15 verbose cwd /Users/msheth/solva_chemicals/solva_chemicals
+16 verbose Darwin 24.6.0
+17 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "dev"
+18 verbose node v12.16.1
+19 verbose npm  v6.13.4
+20 error code ELIFECYCLE
+21 error errno 1
+22 error solva_chemicals@0.1.0 dev: `vite`
+22 error Exit status 1
+23 error Failed at the solva_chemicals@0.1.0 dev script.
+23 error This is probably not a problem with npm. There is likely additional logging output above.
+24 verbose exit [ 1, true ]

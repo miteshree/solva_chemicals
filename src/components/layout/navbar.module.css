@@ -1,0 +1,194 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(7, 31, 48, 0.6);
+  border-bottom: 1px solid rgba(184, 194, 204, 0.18);
+  backdrop-filter: blur(14px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(184, 194, 204, 0.18);
+  padding: 6px;
+}
+
+.brandText {
+  display: grid;
+}
+
+.brandName {
+  font-weight: 780;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.brandTag {
+  font-size: 12px;
+  color: rgba(184, 194, 204, 0.92);
+  line-height: 1.2;
+  margin-top: 2px;
+  max-width: 42ch;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.link {
+  position: relative;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.86);
+  padding: 10px 10px;
+  border-radius: 999px;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menuBtn {
+  display: none;
+  border: 1px solid rgba(184, 194, 204, 0.22);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.menuBtn:hover {
+  border-color: rgba(31, 163, 163, 0.45);
+}
+
+.menuIcon {
+  width: 18px;
+  height: 12px;
+  display: inline-block;
+  background:
+    linear-gradient(currentColor 0 0) 0 0 / 100% 2px,
+    linear-gradient(currentColor 0 0) 0 50% / 100% 2px,
+    linear-gradient(currentColor 0 0) 0 100% / 100% 2px;
+  background-repeat: no-repeat;
+}
+
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mobileSheet {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: min(420px, calc(100% - 24px));
+  border-radius: 18px;
+  border: 1px solid rgba(184, 194, 204, 0.22);
+  background: rgba(7, 31, 48, 0.92);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+  padding: 14px;
+}
+
+.mobileTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 4px 12px;
+}
+
+.mobileTitle {
+  font-weight: 760;
+  letter-spacing: -0.02em;
+}
+
+.closeBtn {
+  border: 1px solid rgba(184, 194, 204, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.mobileLinks {
+  display: grid;
+  gap: 6px;
+  padding: 10px 0 14px;
+}
+
+.mobileLink {
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(184, 194, 204, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.mobileLink:hover {
+  border-color: rgba(31, 163, 163, 0.45);
+}
+
+.mobileCtas {
+  display: grid;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+@media (max-width: 920px) {
+  .nav {
+    display: none;
+  }
+  .menuBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .brandTag {
+    display: none;
+  }
+}
+

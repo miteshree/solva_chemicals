@@ -1,0 +1,52 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@6.13.4
+3 info using node@v12.16.1
+4 verbose npm-session b90724c89395acf0
+5 silly install runPreinstallTopLevelLifecycles
+6 silly preinstall solva_chemicals@0.1.0
+7 info lifecycle solva_chemicals@0.1.0~preinstall: solva_chemicals@0.1.0
+8 silly install loadCurrentTree
+9 silly install readLocalPackageData
+10 timing stage:loadCurrentTree Completed in 114ms
+11 silly install loadIdealTree
+12 silly install cloneCurrentTreeToIdealTree
+13 timing stage:loadIdealTree:cloneCurrentTree Completed in 1ms
+14 silly install loadShrinkwrap
+15 timing stage:loadIdealTree:loadShrinkwrap Completed in 69ms
+16 silly install loadAllDepsIntoIdealTree
+17 silly fetchPackageMetaData error for @vitejs/plugin-react@^1.3.2 request to https://registry.npmjs.org/@vitejs%2fplugin-react failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+18 silly fetchPackageMetaData error for vite@^2.9.18 request to https://registry.npmjs.org/vite failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+19 silly fetchPackageMetaData error for @vitejs/plugin-react@^1.3.2 request to https://registry.npmjs.org/@vitejs%2fplugin-react failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+20 silly fetchPackageMetaData error for vite@^2.9.18 request to https://registry.npmjs.org/vite failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+21 timing stage:rollbackFailedOptional Completed in 0ms
+22 timing stage:runTopLevelLifecycles Completed in 267ms
+23 silly saveTree solva_chemicals@0.1.0
+23 silly saveTree ├─┬ react-dom@18.3.1
+23 silly saveTree │ ├─┬ loose-envify@1.4.0
+23 silly saveTree │ │ └── js-tokens@4.0.0
+23 silly saveTree │ └── scheduler@0.23.2
+23 silly saveTree └── react@18.3.1
+24 verbose type system
+25 verbose stack FetchError: request to https://registry.npmjs.org/@vitejs%2fplugin-react failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+25 verbose stack     at ClientRequest.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/node-fetch-npm/src/index.js:68:14)
+25 verbose stack     at ClientRequest.emit (events.js:311:20)
+25 verbose stack     at TLSSocket.socketErrorListener (_http_client.js:426:9)
+25 verbose stack     at TLSSocket.emit (events.js:311:20)
+25 verbose stack     at emitErrorNT (internal/streams/destroy.js:92:8)
+25 verbose stack     at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+25 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:84:21)
+26 verbose cwd /Users/msheth/solva_chemicals/solva_chemicals
+27 verbose Darwin 24.6.0
+28 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+29 verbose node v12.16.1
+30 verbose npm  v6.13.4
+31 error code ENOTFOUND
+32 error errno ENOTFOUND
+33 error network request to https://registry.npmjs.org/@vitejs%2fplugin-react failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+34 error network This is a problem related to network connectivity.
+34 error network In most cases you are behind a proxy or have bad network settings.
+34 error network
+34 error network If you are behind a proxy, please make sure that the
+34 error network 'proxy' config is set properly.  See: 'npm help config'
+35 verbose exit [ 1, true ]

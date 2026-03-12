@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 220" role="img" aria-label="Solva Chemicals">
+  <defs>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1FA3A3"/>
+      <stop offset="1" stop-color="#2E6FA7"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(20 22)">
+    <path d="M98 0 156 34v68l-58 34-58-34V34z" fill="url(#mark)"/>
+    <path d="M98 28 132 48v40l-34 20-34-20V48z" fill="#FFFFFF" opacity="0.92"/>
+    <path d="M0 48 58 14l58 34-58 34z" fill="#B8C2CC" opacity="0.95"/>
+    <path d="M0 88 58 54l58 34-58 34z" fill="#0B3C5D" opacity="0.9"/>
+  </g>
+  <g font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" fill="#0B3C5D">
+    <text x="240" y="95" font-size="88" font-weight="800" letter-spacing="10">SOLVA</text>
+    <text x="244" y="150" font-size="22" fill="#333333" letter-spacing="6">CHEMICALS</text>
+    <text x="244" y="185" font-size="18" fill="#B8C2CC" letter-spacing="5">MOLECULES TO MARKET</text>
+  </g>
+</svg>
+

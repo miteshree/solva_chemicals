@@ -1,0 +1,116 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.panel {
+  padding: 18px;
+}
+
+.panelTitle {
+  font-weight: 860;
+  letter-spacing: -0.02em;
+}
+
+.list {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(184, 194, 204, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.check {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(31, 163, 163, 0.14);
+  border: 1px solid rgba(31, 163, 163, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 900;
+}
+
+.itemTitle {
+  font-weight: 820;
+  letter-spacing: -0.02em;
+}
+
+.itemDesc {
+  margin-top: 6px;
+  color: rgba(184, 194, 204, 0.94);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.badges {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.badge {
+  border-radius: 16px;
+  border: 1px solid rgba(184, 194, 204, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 12px;
+}
+
+.badgeTop {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.badgeBottom {
+  margin-top: 6px;
+  color: rgba(184, 194, 204, 0.9);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.callout {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(46, 111, 167, 0.22);
+  background: linear-gradient(135deg, rgba(46, 111, 167, 0.16), rgba(31, 163, 163, 0.09));
+  color: rgba(184, 194, 204, 0.95);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.cta {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(31, 163, 163, 0.45);
+  background: rgba(31, 163, 163, 0.12);
+  font-weight: 800;
+}
+
+.cta:hover {
+  border-color: rgba(31, 163, 163, 0.75);
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
