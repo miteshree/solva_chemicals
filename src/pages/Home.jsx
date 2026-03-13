@@ -1,5 +1,6 @@
 import Navbar from "../components/layout/Navbar.jsx";
 import Footer from "../components/layout/Footer.jsx";
+import HeaderBanner from "../components/sections/HeaderBanner.jsx";
 import Hero from "../components/sections/Hero.jsx";
 import TrustBar from "../components/sections/TrustBar.jsx";
 import Capabilities from "../components/sections/Capabilities.jsx";
@@ -16,6 +17,7 @@ export default function Home() {
       <a className="skipLink" href="#main">
         Skip to content
       </a>
+      <HeaderBanner />
       <Navbar />
       <main id="main">
         <Hero />
@@ -24,7 +26,7 @@ export default function Home() {
         <MarketPulse />
         <SolutionsBento />
         <Quality />
-        <GlobalReach />
+        {/* <GlobalReach /> */}
         <FAQ />
         <Contact />
       </main>
@@ -32,4 +34,3 @@ export default function Home() {
     </div>
   );
 }
-

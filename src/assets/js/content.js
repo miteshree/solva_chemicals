@@ -2,7 +2,7 @@ export const brand = {
   name: "Solva Chemicals",
   tagline: "Global Polymer and Chemical Supply, Built on Expertise.",
   subtag:
-    "From polymers to specialty chemicals, we connect qualified producers with reliable buyers—fast, compliant, and on-spec.",
+    "Delivering polymers, specialty chemicals, and material solutions through trusted global partnerships.",
   email: "sales@solvachemicals.com",
   phone: "+1 (000) 000-0000",
   location: "North America • Global coverage",
@@ -20,8 +20,10 @@ export const navLinks = [
 
 export const capabilities = [
   {
-    title: "Polymer Supply",
-    desc: "Prime, off-grade, recycled, and specialty resins with consistent documentation and traceability.",
+    title: "Sustainability and Responsibility",
+    desc: `We believe the future of the chemical industry must balance performance with environmental responsibility. Solva
+actively supports sustainable materials, responsible manufacturing practices, and solutions that reduce
+environmental impact across the value chain.`,
     icon: "hex",
   },
   {
