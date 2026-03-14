@@ -12,13 +12,13 @@ export default function Capabilities() {
         <div className="sectionTitle">
           <div>
             <div className="kicker">
-              <span className="kickerDot" aria-hidden="true" /> Capabilities
+              <span className="kickerDot" aria-hidden="true" /> Sustainability and Responsibility
             </div>
             <h2 className="h2">A supply partner built for precision and speed.</h2>
-            <p className="lead">
+            {/* <p className="lead">
               You get a pragmatic sourcing workflow: tight specs, clear paperwork, and logistics that
               fit real-world constraints.
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -28,7 +28,7 @@ export default function Capabilities() {
               <div className={styles.iconWrap}>
                 <Icon name={c.icon} size={22} />
               </div>
-              <div className={styles.title}>{c.title}</div>
+              {/* <div className={styles.title}>{c.title}</div> */}
               <div className={styles.desc}>{c.desc}</div>
               <div className={styles.footer}>
                 <span className={styles.tag}>Built on expertise</span>

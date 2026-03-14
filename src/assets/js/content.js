@@ -26,21 +26,21 @@ actively supports sustainable materials, responsible manufacturing practices, an
 environmental impact across the value chain.`,
     icon: "hex",
   },
-  {
-    title: "Specialty Chemicals",
-    desc: "Performance additives and intermediates sourced with a quality-first, compliance-forward approach.",
-    icon: "flask",
-  },
-  {
-    title: "Procurement Intelligence",
-    desc: "Substitutions, lead-time planning, and risk-aware sourcing built for fast-moving markets.",
-    icon: "signal",
-  },
-  {
-    title: "Logistics & Documentation",
-    desc: "Incoterms-ready coordination, SDS/CoA handling, and export support to keep shipments moving.",
-    icon: "ship",
-  },
+  // {
+  //   title: "Specialty Chemicals",
+  //   desc: "Performance additives and intermediates sourced with a quality-first, compliance-forward approach.",
+  //   icon: "flask",
+  // },
+  // {
+  //   title: "Procurement Intelligence",
+  //   desc: "Substitutions, lead-time planning, and risk-aware sourcing built for fast-moving markets.",
+  //   icon: "signal",
+  // },
+  // {
+  //   title: "Logistics & Documentation",
+  //   desc: "Incoterms-ready coordination, SDS/CoA handling, and export support to keep shipments moving.",
+  //   icon: "ship",
+  // },
 ];
 
 export const pulseTopics = [
