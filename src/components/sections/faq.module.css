@@ -7,8 +7,8 @@
 
 .item {
   border-radius: 18px;
-  border: 1px solid rgba(184, 194, 204, 0.18);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.92);
   padding: 14px 14px;
 }
 
@@ -36,7 +36,7 @@
 
 .a {
   margin-top: 10px;
-  color: rgba(184, 194, 204, 0.94);
+  color: var(--muted);
   line-height: 1.7;
   font-size: 14px;
 }
@@ -46,4 +46,3 @@
     grid-template-columns: 1fr;
   }
 }
-

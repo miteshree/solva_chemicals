@@ -15,9 +15,9 @@
 .chip {
   border-radius: 999px;
   padding: 10px 12px;
-  border: 1px solid rgba(184, 194, 204, 0.22);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text);
   cursor: pointer;
   font-size: 13px;
 }
@@ -45,7 +45,7 @@
 
 .sideTop {
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(184, 194, 204, 0.14);
+  border-bottom: 1px solid var(--border);
 }
 
 .sideTitle {
@@ -55,7 +55,7 @@
 
 .sideSub {
   margin-top: 10px;
-  color: rgba(184, 194, 204, 0.92);
+  color: var(--muted);
   line-height: 1.6;
   font-size: 14px;
 }
@@ -70,7 +70,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(11, 60, 93, 0.92);
   line-height: 1.5;
   font-size: 14px;
 }
@@ -137,8 +137,8 @@
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.06);
+  background: rgba(31, 163, 163, 0.55);
+  box-shadow: 0 0 0 6px rgba(31, 163, 163, 0.12);
 }
 
 .topicTitle {
@@ -149,7 +149,7 @@
 
 .topicDesc {
   margin-top: 10px;
-  color: rgba(184, 194, 204, 0.94);
+  color: var(--muted);
   line-height: 1.65;
   font-size: 14px;
 }
@@ -172,4 +172,3 @@
     grid-template-columns: 1fr;
   }
 }
-

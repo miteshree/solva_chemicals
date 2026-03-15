@@ -2,8 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(180deg, rgba(7, 31, 48, 0.86), rgba(7, 31, 48, 0.55));
-  border-bottom: 1px solid rgba(184, 194, 204, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78));
+  border-bottom: 1px solid var(--border);
   backdrop-filter: blur(14px);
 }
 
@@ -23,11 +23,11 @@
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 0px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(184, 194, 204, 0.18);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(11, 60, 93, 0.14);
   padding: 6px;
 }
 
@@ -43,7 +43,7 @@
 
 .brandTag {
   font-size: 12px;
-  color: rgba(184, 194, 204, 0.92);
+  color: var(--muted-2);
   line-height: 1.2;
   margin-top: 2px;
   max-width: 42ch;
@@ -58,15 +58,15 @@
 .link {
   position: relative;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--text);
   padding: 10px 10px;
   border-radius: 999px;
   transition: background 140ms ease, color 140ms ease;
 }
 
 .link:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.96);
+  background: var(--surface);
+  color: rgba(11, 60, 93, 0.98);
 }
 
 .actions {
@@ -77,16 +77,16 @@
 
 .menuBtn {
   display: none;
-  border: 1px solid rgba(184, 194, 204, 0.22);
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(11, 60, 93, 0.16);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
   border-radius: 12px;
   padding: 10px 12px;
   cursor: pointer;
 }
 
 .menuBtn:hover {
-  border-color: rgba(31, 163, 163, 0.45);
+  border-color: rgba(31, 163, 163, 0.55);
 }
 
 .menuIcon {
@@ -126,10 +126,10 @@
   top: 12px;
   width: min(420px, calc(100% - 24px));
   border-radius: 18px;
-  border: 1px solid rgba(184, 194, 204, 0.22);
-  background: rgba(7, 31, 48, 0.92);
+  border: 1px solid rgba(11, 60, 93, 0.14);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 30px 90px rgba(11, 60, 93, 0.25);
   padding: 14px;
 }
 
@@ -146,9 +146,9 @@
 }
 
 .closeBtn {
-  border: 1px solid rgba(184, 194, 204, 0.2);
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(11, 60, 93, 0.16);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
   border-radius: 12px;
   padding: 8px 10px;
   cursor: pointer;
@@ -163,9 +163,9 @@
 .mobileLink {
   padding: 12px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(184, 194, 204, 0.18);
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(11, 60, 93, 0.14);
+  background: rgba(11, 60, 93, 0.03);
+  color: var(--text);
 }
 
 .mobileLink:hover {

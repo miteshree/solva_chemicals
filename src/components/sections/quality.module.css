@@ -26,8 +26,8 @@
   gap: 12px;
   padding: 12px;
   border-radius: 16px;
-  border: 1px solid rgba(184, 194, 204, 0.16);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .check {
@@ -38,7 +38,7 @@
   border-radius: 10px;
   background: rgba(31, 163, 163, 0.14);
   border: 1px solid rgba(31, 163, 163, 0.22);
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(11, 60, 93, 0.92);
   font-weight: 900;
 }
 
@@ -49,7 +49,7 @@
 
 .itemDesc {
   margin-top: 6px;
-  color: rgba(184, 194, 204, 0.94);
+  color: var(--muted);
   line-height: 1.6;
   font-size: 14px;
 }
@@ -63,8 +63,8 @@
 
 .badge {
   border-radius: 16px;
-  border: 1px solid rgba(184, 194, 204, 0.16);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.92);
   padding: 12px;
 }
 
@@ -75,7 +75,7 @@
 
 .badgeBottom {
   margin-top: 6px;
-  color: rgba(184, 194, 204, 0.9);
+  color: var(--muted-2);
   font-size: 12px;
   line-height: 1.4;
 }
@@ -86,7 +86,7 @@
   border-radius: 16px;
   border: 1px solid rgba(46, 111, 167, 0.22);
   background: linear-gradient(135deg, rgba(46, 111, 167, 0.16), rgba(31, 163, 163, 0.09));
-  color: rgba(184, 194, 204, 0.95);
+  color: var(--muted);
   line-height: 1.6;
   font-size: 14px;
 }
@@ -113,4 +113,3 @@
     grid-template-columns: 1fr;
   }
 }
-

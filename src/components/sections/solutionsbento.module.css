@@ -42,7 +42,7 @@
 
 .heroDesc {
   margin-top: 10px;
-  color: rgba(184, 194, 204, 0.94);
+  color: var(--muted);
   line-height: 1.7;
   font-size: 14px;
   max-width: 60ch;
@@ -57,8 +57,8 @@
 
 .stat {
   border-radius: 16px;
-  border: 1px solid rgba(184, 194, 204, 0.18);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.92);
   padding: 12px;
 }
 
@@ -69,7 +69,7 @@
 
 .statLabel {
   margin-top: 6px;
-  color: rgba(184, 194, 204, 0.92);
+  color: var(--muted-2);
   font-size: 12px;
 }
 
@@ -101,7 +101,7 @@
 
 .itemDesc {
   margin-top: 10px;
-  color: rgba(184, 194, 204, 0.94);
+  color: var(--muted);
   line-height: 1.65;
   font-size: 14px;
 }
@@ -109,7 +109,7 @@
 .wide {
   grid-column: 2 / -1;
   padding: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9));
 }
 
 .wideTop {
@@ -133,7 +133,7 @@
 
 .wideDesc {
   margin-top: 12px;
-  color: rgba(184, 194, 204, 0.94);
+  color: var(--muted);
   line-height: 1.7;
   font-size: 14px;
 }
@@ -156,4 +156,3 @@
     grid-template-columns: 1fr;
   }
 }
-

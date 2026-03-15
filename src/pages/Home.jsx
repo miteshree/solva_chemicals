@@ -17,8 +17,8 @@ export default function Home() {
       <a className="skipLink" href="#main">
         Skip to content
       </a>
-      <HeaderBanner />
       <Navbar />
+      <HeaderBanner />
       <main id="main">
         <Hero />
         <TrustBar />
