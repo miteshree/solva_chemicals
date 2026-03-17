@@ -39,7 +39,7 @@ export default function Hero() {
                 <div className={styles.quickBottom}>Prime • recycled • specialty</div>
               </div>
               <div className={styles.quickItem}>
-                <div className={styles.quickTop}>Chemical inputs</div>
+                <div className={styles.quickTop}>Masterbatches</div>
                 <div className={styles.quickBottom}>Additives • intermediates</div>
               </div>
               <div className={styles.quickItem}>

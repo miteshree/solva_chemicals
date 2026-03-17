@@ -7,16 +7,14 @@ export default function HeaderBanner() {
 
   return (
     <section className={styles.wrap} aria-label="Solva Chemicals header banner">
-      <div className="container">
-        <div className={styles.card}>
-          <img
-            className={styles.img}
-            src={src}
-            alt="Solva Chemicals — Molecules to Market"
-            decoding="async"
-            onError={() => setSrc(banner)}
-          />
-        </div>
+      <div className={styles.card}>
+        <img
+          className={styles.img}
+          src={src}
+          alt="Solva Chemicals — Molecules to Market"
+          decoding="async"
+          onError={() => setSrc(banner)}
+        />
       </div>
     </section>
   );

@@ -12,18 +12,21 @@ export default function SolutionsBento() {
         <div className="sectionTitle">
           <div>
             <div className="kicker">
-              <span className="kickerDot" aria-hidden="true" /> Solutions
+              <span className="kickerDot" aria-hidden="true" /> Technical Services
             </div>
-            <h2 className="h2">Modern sourcing patterns, without the noise.</h2>
+            <h2 className="h2">Technical guidance and material expertise.</h2>
             <p className="lead">
-              The best supply outcomes come from clear specs, disciplined documentation, and a
-              logistics plan that fits your timeline.
+              At Solva Chemicals Corporation, our role extends beyond supplying materials. We provide technical guidance and
+material expertise that help customers optimize production processes and improve product performance.
+            </p>
+            <p className="lead">
+              Our technical services include:
             </p>
           </div>
         </div>
 
         <div ref={ref} className={`${styles.grid} reveal ${visible ? "revealVisible" : ""}`}>
-          <div className={`${styles.hero} card`}>
+          {/* <div className={`${styles.hero} card`}>
             <div className={styles.heroKicker}>Bento workflow</div>
             <div className={styles.heroTitle}>From requirement → qualified supply option.</div>
             <div className={styles.heroDesc}>
@@ -47,17 +50,17 @@ export default function SolutionsBento() {
             <a className={styles.heroCta} href="#contact">
               Start a quote request <Icon name="arrow" size={16} />
             </a>
-          </div>
+          </div> */}
 
           {solutions.slice(0, 4).map((s) => (
             <div key={s.title} className={`${styles.item} card`}>
               <div className={styles.itemTitle}>{s.title}</div>
-              <div className={styles.itemDesc}>{s.desc}</div>
+              {/* <div className={styles.itemDesc}>{s.desc}</div> */}
             </div>
           ))}
 
           <div className={`${styles.wide} card`}>
-            <div className={styles.wideTop}>
+            {/* <div className={styles.wideTop}>
               <div className={styles.wideTitle}>A quality-first posture</div>
               <div className={styles.widePills}>
                 <span className="pill">SDS</span>
@@ -65,11 +68,14 @@ export default function SolutionsBento() {
                 <span className="pill">Packaging</span>
                 <span className="pill">Traceability</span>
               </div>
-            </div>
+            </div> */}
             <div className={styles.wideDesc}>
-              We aim to reduce receiving surprises by aligning expectations before the shipment
-              moves. If you need alternates, we’ll compare fit, constraints, and paperwork early.
+            With over 40 years of collaborative industry expertise, our team works closely with customers to ensure the
+            materials we supply perform reliably within real-world manufacturing environments.
             </div>
+            <a className={styles.heroCta} href="#contact">
+              Start a quote request <Icon name="arrow" size={16} />
+            </a>
           </div>
         </div>
       </div>

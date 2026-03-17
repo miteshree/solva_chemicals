@@ -6,7 +6,7 @@
 }
 
 .card {
-  border-radius: 0 0 0px 0px;
+  border-radius: 0 0 26px 26px;
   overflow: hidden;
   border: none;
   background: transparent;
@@ -36,9 +36,10 @@
 
 .img {
   width: 100%;
-  height: clamp(160px, 22vw, 260px);
+  height: clamp(280px, 34vw, 520px);
   display: block;
   object-fit: cover;
+  object-position: center;
   filter: saturate(1.12) contrast(1.05);
 }
 
@@ -47,6 +48,6 @@
     margin-top: -70px;
   }
   .img {
-    height: 170px;
+    height: 260px;
   }
 }

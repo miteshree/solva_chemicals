@@ -3,32 +3,48 @@
   top: 0;
   z-index: 1000;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78));
-  border-bottom: 1px solid var(--border);
   backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(11, 60, 93, 0.08);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(31, 163, 163, 0.9), rgba(46, 111, 167, 0.9));
+  opacity: 0.55;
 }
 
 .inner {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 16px;
-  padding: 14px 0;
+  padding: 10px 0;
+  min-height: var(--navHeight);
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-width: 220px;
+  min-width: 180px;
 }
 
 .logo {
-  width: 42px;
-  height: 42px;
+  height: 56px;
+  width: auto;
+  max-width: 200px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(11, 60, 93, 0.14);
-  padding: 6px;
+  background: transparent;
+  padding: 0;
+  object-fit: fill;
+  filter: saturate(1.05) contrast(1.03);
+  margin-top: 5px;
 }
 
 .brandText {
@@ -39,6 +55,7 @@
   font-weight: 780;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  color: rgba(11, 60, 93, 0.98);
 }
 
 .brandTag {
@@ -61,12 +78,32 @@
   color: var(--text);
   padding: 10px 10px;
   border-radius: 999px;
-  transition: background 140ms ease, color 140ms ease;
+  transition: background 140ms ease, color 140ms ease, transform 140ms ease;
 }
 
 .link:hover {
   background: var(--surface);
   color: rgba(11, 60, 93, 0.98);
+  transform: translateY(-1px);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(31, 163, 163, 0.9), rgba(46, 111, 167, 0.9));
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.link:hover::after {
+  opacity: 0.65;
+  transform: scaleX(1);
 }
 
 .actions {
@@ -188,6 +225,12 @@
     justify-content: center;
   }
   .brandTag {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .brandText {
     display: none;
   }
 }

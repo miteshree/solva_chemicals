@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { brand, navLinks } from "../../assets/js/content.js";
-import logo from "../../assets/images/solva_logo.jpeg";
+import logo from "../../assets/images/solva_logo_nav.png";
 import styles from "./navbar.module.css";
 
 function useBodyScrollLock(locked) {
@@ -33,10 +33,6 @@ export default function Navbar() {
       <div className={`${styles.inner} container`}>
         <a className={styles.brand} href="#main" aria-label={brand.name}>
           <img className={styles.logo} src={logo} alt="" />
-          <span className={styles.brandText}>
-            <span className={styles.brandName}>{brand.name}</span>
-            <span className={styles.brandTag}>{brand.tagline}</span>
-          </span>
         </a>
 
         <nav className={styles.nav} aria-label="Primary">
@@ -107,4 +103,3 @@ export default function Navbar() {
     </header>
   );
 }
-

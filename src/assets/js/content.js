@@ -20,27 +20,25 @@ export const navLinks = [
 
 export const capabilities = [
   {
-    title: "Sustainability and Responsibility",
-    desc: `We believe the future of the chemical industry must balance performance with environmental responsibility. Solva
-actively supports sustainable materials, responsible manufacturing practices, and solutions that reduce
-environmental impact across the value chain.`,
+    title: "Polymer Supply",
+    desc: "Prime, off-grade, recycled, and specialty resins with consistent documentation and traceability.",
     icon: "hex",
   },
-  // {
-  //   title: "Specialty Chemicals",
-  //   desc: "Performance additives and intermediates sourced with a quality-first, compliance-forward approach.",
-  //   icon: "flask",
-  // },
-  // {
-  //   title: "Procurement Intelligence",
-  //   desc: "Substitutions, lead-time planning, and risk-aware sourcing built for fast-moving markets.",
-  //   icon: "signal",
-  // },
-  // {
-  //   title: "Logistics & Documentation",
-  //   desc: "Incoterms-ready coordination, SDS/CoA handling, and export support to keep shipments moving.",
-  //   icon: "ship",
-  // },
+  {
+    title: "Specialty Chemicals",
+    desc: "Performance additives and intermediates sourced with a quality-first, compliance-forward approach.",
+    icon: "flask",
+  },
+  {
+    title: "Procurement Intelligence",
+    desc: "Substitutions, lead-time planning, and risk-aware sourcing built for fast-moving markets.",
+    icon: "signal",
+  },
+  {
+    title: "Logistics & Documentation",
+    desc: "Incoterms-ready coordination, SDS/CoA handling, and export support to keep shipments moving.",
+    icon: "ship",
+  },
 ];
 
 export const pulseTopics = [
@@ -53,11 +51,6 @@ export const pulseTopics = [
     title: "Nearshoring & Supply Resilience",
     tag: "Risk",
     desc: "Diversify lanes and suppliers to reduce disruption risk and stabilize lead times.",
-  },
-  {
-    title: "Bio-based & Low-Impact Materials",
-    tag: "Innovation",
-    desc: "Explore lower-carbon options where performance and processing remain non-negotiable.",
   },
   {
     title: "Digital Traceability",
@@ -73,23 +66,23 @@ export const pulseTopics = [
 
 export const solutions = [
   {
-    title: "Spec-first sourcing",
+    title: "Material selection support",
     desc: "We match your critical properties to qualified producers—then verify documentation before shipment.",
   },
   {
-    title: "Alternates & substitutions",
+    title: "Process optimization guidance",
     desc: "Shortlist compatible materials for performance, processing, and regulatory constraints.",
   },
   {
-    title: "Contract + spot coverage",
+    title: "Product performance recommendations",
     desc: "Blend contract stability with spot agility to keep production running through volatility.",
   },
   {
-    title: "Quality documentation",
+    title: "Application-specific material consultation",
     desc: "SDS/CoA handling, lot traceability, and packaging verification built into our workflow.",
   },
   {
-    title: "Global logistics partner network",
+    title: "Supply chain and sourcing advisory",
     desc: "Incoterms-ready coordination across lanes—with visibility, responsiveness, and practicality.",
   },
 ];

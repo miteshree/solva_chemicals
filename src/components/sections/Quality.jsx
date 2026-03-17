@@ -69,12 +69,8 @@ export default function Quality() {
                 <div className={styles.badgeBottom}>Certificate of Analysis</div>
               </div>
               <div className={styles.badge}>
-                <div className={styles.badgeTop}>Lot</div>
-                <div className={styles.badgeBottom}>Traceability signals</div>
-              </div>
-              <div className={styles.badge}>
-                <div className={styles.badgeTop}>Incoterms</div>
-                <div className={styles.badgeBottom}>Export readiness</div>
+                <div className={styles.badgeTop}>TDS</div>
+                <div className={styles.badgeBottom}>Technical Data Sheets</div>
               </div>
             </div>
 
