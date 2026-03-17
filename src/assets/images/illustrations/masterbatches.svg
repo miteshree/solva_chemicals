@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-label="Masterbatches illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2E6FA7" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#1FA3A3" stop-opacity="0.12"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="520" rx="26" fill="#FFFFFF"/>
+  <rect x="24" y="24" width="1152" height="472" rx="22" fill="url(#bg)"/>
+
+  <!-- color pellets -->
+  <g opacity="0.95">
+    <circle cx="290" cy="165" r="28" fill="#1FA3A3"/>
+    <circle cx="360" cy="205" r="22" fill="#2E6FA7"/>
+    <circle cx="430" cy="160" r="18" fill="#0B3C5D"/>
+    <circle cx="500" cy="210" r="24" fill="#B8C2CC"/>
+
+    <circle cx="690" cy="320" r="28" fill="#2E6FA7"/>
+    <circle cx="760" cy="360" r="22" fill="#1FA3A3"/>
+    <circle cx="830" cy="318" r="18" fill="#0B3C5D"/>
+    <circle cx="900" cy="368" r="24" fill="#B8C2CC"/>
+  </g>
+
+  <circle cx="380" cy="190" r="140" fill="#1FA3A3" opacity="0.08" filter="url(#soft)"/>
+  <circle cx="820" cy="350" r="170" fill="#2E6FA7" opacity="0.08" filter="url(#soft)"/>
+
+  <!-- subtle stripe -->
+  <g opacity="0.28">
+    <rect x="120" y="420" width="960" height="12" rx="6" fill="#0B3C5D"/>
+    <rect x="180" y="444" width="840" height="10" rx="5" fill="#1FA3A3"/>
+  </g>
+</svg>
+

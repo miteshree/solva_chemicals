@@ -7,8 +7,8 @@
 
 .copy,
 .list {
-  border-radius: 18px;
   padding: 18px;
+  border-radius: 18px;
 }
 
 .img {
@@ -19,7 +19,8 @@
   margin-bottom: 14px;
 }
 
-.copyTitle {
+.copyTitle,
+.listTitle {
   font-weight: 880;
   letter-spacing: -0.02em;
 }
@@ -31,25 +32,11 @@
   font-size: 14px;
 }
 
-.listTitle {
-  font-weight: 880;
-  letter-spacing: -0.02em;
-}
-
 .ul {
   margin: 12px 0 0 18px;
   padding: 0;
   color: var(--muted);
   line-height: 1.75;
-  font-size: 14px;
-}
-
-.note {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  line-height: 1.7;
   font-size: 14px;
 }
 

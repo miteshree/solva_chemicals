@@ -10,6 +10,42 @@ export default function Icon({ name, size = 22 }) {
   const props = { width: size, height: size, viewBox: "0 0 24 24", ...common };
 
   switch (name) {
+    case "palette":
+      return (
+        <svg {...props} aria-hidden="true">
+          <path d="M12 3c5 0 9 3.6 9 8.1 0 2.3-1.4 3.9-3.5 3.9H16c-1 0-1.7.9-1.4 1.8.2.5.3.8.3 1.2 0 1.6-1.6 3-3.9 3C6 21 3 17.7 3 13c0-5.5 4-10 9-10Z" />
+          <path d="M7.5 12.2h0" />
+          <path d="M10.2 9.5h0" />
+          <path d="M13.6 8.8h0" />
+          <path d="M16.6 11h0" />
+          <path d="M7.5 12.2a.7.7 0 1 0 0-1.4.7.7 0 0 0 0 1.4Z" fill="currentColor" stroke="none"/>
+          <path d="M10.2 9.5a.7.7 0 1 0 0-1.4.7.7 0 0 0 0 1.4Z" fill="currentColor" stroke="none"/>
+          <path d="M13.6 8.8a.7.7 0 1 0 0-1.4.7.7 0 0 0 0 1.4Z" fill="currentColor" stroke="none"/>
+          <path d="M16.6 11a.7.7 0 1 0 0-1.4.7.7 0 0 0 0 1.4Z" fill="currentColor" stroke="none"/>
+        </svg>
+      );
+    case "bolt":
+      return (
+        <svg {...props} aria-hidden="true">
+          <path d="M13 2 4 14h7l-1 8 9-12h-7Z" />
+        </svg>
+      );
+    case "layers":
+      return (
+        <svg {...props} aria-hidden="true">
+          <path d="M12 3 3 8l9 5 9-5-9-5Z" />
+          <path d="M3 12l9 5 9-5" />
+          <path d="M3 16l9 5 9-5" />
+        </svg>
+      );
+    case "beads":
+      return (
+        <svg {...props} aria-hidden="true">
+          <path d="M8.5 8.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+          <path d="M17 12a3.2 3.2 0 1 0 0-6.4A3.2 3.2 0 0 0 17 12Z" />
+          <path d="M9.5 21a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />
+        </svg>
+      );
     case "hex":
       return (
         <svg {...props} aria-hidden="true">
@@ -62,4 +98,3 @@ export default function Icon({ name, size = 22 }) {
       return null;
   }
 }
-

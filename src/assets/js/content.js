@@ -11,10 +11,11 @@ export const brand = {
 export const navLinks = [
   { label: "Capabilities", href: "#capabilities" },
   { label: "Market Pulse", href: "#market-pulse" },
-  { label: "Solutions", href: "#solutions" },
+  { label: "Technical Services", href: "#solutions" },
+  { label: "Masterbatches", href: "#masterbatches" },
   { label: "Quality", href: "#quality" },
-  { label: "Global Reach", href: "#global-reach" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Supply Chain", href: "#supply-chain" },
+  { label: "Sustainability", href: "#sustainability" },
   { label: "Contact", href: "#contact" },
 ];
 
