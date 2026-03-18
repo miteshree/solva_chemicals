@@ -13,6 +13,7 @@ export const navLinks = [
   { label: "Market Pulse", href: "#market-pulse" },
   { label: "Technical Services", href: "#solutions" },
   { label: "Masterbatches", href: "#masterbatches" },
+  {label: "Products", href: "/products"},
   { label: "Quality", href: "#quality" },
   { label: "Supply Chain", href: "#supply-chain" },
   { label: "Sustainability", href: "#sustainability" },

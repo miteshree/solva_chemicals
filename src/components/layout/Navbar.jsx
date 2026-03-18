@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";   
+import {Link} from "react-router-dom";
 import { brand, navLinks } from "../../assets/js/content.js";
 import logo from "../../assets/images/solva_logo_nav.png";
 import styles from "./navbar.module.css";
@@ -36,11 +37,17 @@ export default function Navbar() {
         </a>
 
         <nav className={styles.nav} aria-label="Primary">
-          {links.map((l) => (
-            <a key={l.href} className={styles.link} href={l.href}>
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.href.startsWith("/") ? (
+              <Link key={l.href} className={styles.link} to={l.href}>
+                {l.label}
+              </Link>
+            ) : (
+              <a key={l.href} className={styles.link} href={l.href}>
+                {l.label}
+              </a>
+            )
+          )}
         </nav>
 
         <div className={styles.actions}>
@@ -73,8 +80,17 @@ export default function Navbar() {
             </button>
           </div>
           <div className={styles.mobileLinks}>
-            {links.map((l) => (
-              <a
+            {links.map((l) => l.href.startsWith("/") ? (
+              <Link
+                  key={l.href}
+                  className={styles.mobileLink}
+                  to={l.href}
+                  onClick={() => setOpen(false)}
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                  <a
                 key={l.href}
                 className={styles.mobileLink}
                 href={l.href}

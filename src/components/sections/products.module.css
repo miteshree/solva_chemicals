@@ -1,0 +1,342 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Hero Banner ───────────────────────────── */
+.heroBanner {
+  position: relative;
+  width: 100%;
+  height: clamp(260px, 32vw, 460px);
+  overflow: hidden;
+}
+
+.heroPlaceholder {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(7, 24, 41, 0.85) 0%, rgba(11, 60, 93, 0.7) 50%, rgba(26, 109, 181, 0.6) 100%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(15, 212, 200, 0.04) 0px,
+      rgba(15, 212, 200, 0.04) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+}
+
+.heroKicker {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 12px;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6vw, 80px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin: 0;
+  line-height: 1;
+}
+
+/* ── Intro Section ─────────────────────────── */
+.introSection {
+  padding-bottom: 48px;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.introLeft {}
+
+.introRight {
+  display: grid;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.quickLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+  font-weight: 500;
+  font-size: 14px;
+  transition: border-color 130ms ease, background 130ms ease, transform 130ms ease;
+}
+
+.quickLink:hover {
+  border-color: var(--border-t);
+  background: rgba(255, 255, 255, 0.98);
+  transform: translateX(4px);
+}
+
+.quickDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  flex-shrink: 0;
+}
+
+.quickLabel {
+  flex: 1;
+}
+
+.quickArrow {
+  color: var(--teal-dim);
+  font-size: 16px;
+}
+
+.divider {
+  width: min(var(--container), calc(100% - 2.5rem));
+  margin: 0 auto;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Category Sections ─────────────────────── */
+.categorySection {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.categorySection:last-of-type {
+  border-bottom: none;
+}
+
+.categoryGrid {
+  width: min(var(--container), calc(100% - 2.5rem));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.imgLeft {
+  direction: ltr;
+}
+
+.imgRight {
+  direction: rtl;
+}
+
+.imgRight > * {
+  direction: ltr;
+}
+
+.imgWrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+  aspect-ratio: 4 / 3;
+}
+
+.categoryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
+}
+
+.imgWrap:hover .categoryImg {
+  transform: scale(1.03);
+}
+
+.imgFallback {
+  background: linear-gradient(135deg, rgba(15, 212, 200, 0.12), rgba(26, 109, 181, 0.10));
+  min-height: 280px;
+}
+
+.categoryContent {}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 10px 0 20px;
+  line-height: 1.15;
+}
+
+.itemList {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.itemDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.categoryDesc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.72;
+  margin: 0 0 20px;
+  font-weight: 300;
+}
+
+.inquireBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--teal-dim);
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(15, 212, 200, 0.35);
+  background: rgba(15, 212, 200, 0.07);
+  transition: border-color 130ms, background 130ms, transform 130ms;
+}
+
+.inquireBtn:hover {
+  border-color: var(--teal);
+  background: rgba(15, 212, 200, 0.13);
+  transform: translateY(-1px);
+}
+
+/* ── Custom Sourcing ───────────────────────── */
+.customSection {
+  background: linear-gradient(180deg, rgba(7, 24, 41, 0.02), transparent);
+}
+
+.customCard {
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.customTitle {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 10px 0 14px;
+}
+
+.customDesc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.72;
+  margin: 0;
+  max-width: 68ch;
+  font-weight: 300;
+}
+
+.customRight {
+  flex-shrink: 0;
+}
+
+/* ── CTA Section ───────────────────────────── */
+.ctaSection {
+  padding-top: 48px;
+}
+
+.ctaBox {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-t);
+  background: linear-gradient(135deg, rgba(15, 212, 200, 0.07), rgba(26, 109, 181, 0.06));
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+
+.ctaDesc {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 0 28px;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 900px) {
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .categoryGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .imgRight {
+    direction: ltr;
+  }
+
+  .customCard {
+    grid-template-columns: 1fr;
+    padding: 28px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .ctaBox {
+    padding: 36px 20px;
+  }
+}
