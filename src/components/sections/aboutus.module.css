@@ -12,29 +12,13 @@
   overflow: hidden;
 }
 
-.heroPlaceholder {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg, rgba(7, 24, 41, 0.92) 0%, rgba(11, 60, 93, 0.78) 50%, rgba(26, 109, 181, 0.65) 100%),
-    repeating-linear-gradient(
-      45deg,
-      rgba(15, 212, 200, 0.04) 0px,
-      rgba(15, 212, 200, 0.04) 1px,
-      transparent 1px,
-      transparent 40px
-    );
-}
-
-/* Swap this for your image later:
-.heroImg {
+.heroCanvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
-} */
+  display: block;
+}
 
 .heroOverlay {
   position: absolute;
@@ -72,7 +56,7 @@
   line-height: 1.6;
 }
 
-/* ── Split Sections ────────────────────────── */
+ /* ── Split Sections ────────────────────────── */
 .splitSection {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -154,6 +138,166 @@
   margin-bottom: 0;
 }
 
+/* ── Who We Are Carousel ───────────────────── */
+.carouselSection {
+  padding: 60px 0;
+}
+
+.carouselHead {
+  margin-bottom: 36px;
+}
+
+.carouselWrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.carouselCard {
+  overflow: hidden;
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height:420px;
+}
+
+.carouselImgWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.carouselImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 500ms ease;
+}
+
+.carouselCard:hover .carouselImg {
+  transform: scale(1.03);
+}
+
+.carouselImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(7, 24, 41, 0.55) 100%
+  );
+}
+
+.carouselTag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(15, 212, 200, 0.85);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.carouselContent {
+  padding: 28px 32px 32px;
+}
+
+.carouselTitle {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+
+.carouselDesc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.78;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Controls */
+.carouselControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.carouselBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--navy);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 130ms ease, background 130ms ease, transform 130ms ease;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgba(7, 24, 41, 0.15);
+}
+
+.carouselBtn:hover {
+  border-color: var(--teal);
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  color: var(--white);
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(15, 212, 200, 0.30);
+}
+
+.carouselDots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background:  #b0bec5;
+  cursor: pointer;
+  padding: 0;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.dotActive {
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+ .carouselCard {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .carouselImgWrap {
+    min-height: 240px;
+    height: 240px;
+  }
+
+  .carouselContent {
+    padding: 24px 20px;
+  }
+}
 /* ── Our Values ────────────────────────────── */
 .valuesSection {
   padding: 80px 0;

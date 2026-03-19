@@ -2,6 +2,10 @@ import Navbar from "../components/layout/Navbar.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import useReveal from "../assets/js/hooks/useReveal.js";
 import styles from "../components/sections/aboutus.module.css";
+// import WhorvImg1 from "../assets/images/whorvImg1.jpg";
+import useHexCanvas from "../assets/js/hooks/useHexCanvas.js";
+import { useState } from "react";
+
 
 const values = [
   {
@@ -58,7 +62,108 @@ const whyChoose = [
   },
 ];
 
+const carouselCards = [
+  {
+    img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&q=80",
+    imgAlt: "Chemical manufacturing facility",
+    tag: "About Solva",
+    title: "Who Are We?",
+    desc: "Solva Chemicals Corporation is a specialty chemicals and polymer solutions company committed to connecting innovation with industry. We work with manufacturers, processors, and distributors to deliver reliable access to high-quality chemical and polymer products that power modern manufacturing and infrastructure. Our focus is to simplify complex supply chains and provide dependable sourcing, technical guidance, and market insight.",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
+    imgAlt: "Industry expertise and experience",
+    tag: "Our Experience",
+    title: "40+ Years of Expertise",
+    desc: "Our team brings together over 40 years of collaborative technical and commercial experience in the chemical and polymer industry. This depth of knowledge allows us to understand the practical challenges faced by manufacturers, converters, and industrial customers. We leverage this expertise to recommend materials, identify process efficiencies, and ensure that the products we supply perform reliably within real-world production environments.",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1494961104209-3c223057bd26?w=800&q=80",
+    imgAlt: "Global supply chain and logistics",
+    tag: "Our Approach",
+    title: "Molecules to Market",
+    desc: "What truly separates Solva from traditional chemical distributors is our customer-first approach. We recognize that no two customers operate the same way. Instead of offering one-size-fits-all products, we work closely with every client to develop tailored material solutions aligned with their technical requirements, cost targets, and operational goals. Our objective is to become a trusted long-term partner who helps customers move from molecules to market with confidence.",
+  },
+];
+
+function WhoWeAreCarousel() {
+  const [current, setCurrent] = useState(0);
+  const total = carouselCards.length;
+
+  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+  const next = () => setCurrent((c) => (c + 1) % total);
+
+  const card = carouselCards[current];
+
+  return (
+    <section className={styles.carouselSection}>
+      <div className="container">
+        <div className={styles.carouselHead}>
+          <div className="kicker">
+            <span className="kickerDot" aria-hidden="true" /> Who We Are
+          </div>
+          <h2 className="h2">The people and purpose behind Solva.</h2>
+        </div>
+
+        <div className={styles.carouselWrap}>
+          <div className={`${styles.carouselCard} card`}>
+            {/* Image */}
+            <div className={styles.carouselImgWrap}>
+              <img
+                key={card.img}
+                src={card.img}
+                alt={card.imgAlt}
+                className={styles.carouselImg}
+                loading="lazy"
+              />
+              <div className={styles.carouselImgOverlay} />
+              <span className={styles.carouselTag}>{card.tag}</span>
+            </div>
+
+            {/* Content */}
+            <div className={styles.carouselContent}>
+              <h3 className={styles.carouselTitle}>{card.title}</h3>
+              <p className={styles.carouselDesc}>{card.desc}</p>
+            </div>
+          </div>
+
+          {/* Controls */}
+          <div className={styles.carouselControls}>
+            <button
+              className={styles.carouselBtn}
+              onClick={prev}
+              aria-label="Previous card"
+            >
+              ‹
+            </button>
+
+            <div className={styles.carouselDots}>
+              {carouselCards.map((_, i) => (
+                <button
+                  key={i}
+                  className={`${styles.dot} ${i === current ? styles.dotActive : ""}`}
+                  onClick={() => setCurrent(i)}
+                  aria-label={`Go to card ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              className={styles.carouselBtn}
+              onClick={next}
+              aria-label="Next card"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 export default function AboutUs() {
+
+  const canvasRef = useHexCanvas();
   const s1 = useReveal({ threshold: 0.08 });
   const s2 = useReveal({ threshold: 0.08 });
   const s3 = useReveal({ threshold: 0.08 });
@@ -69,91 +174,22 @@ export default function AboutUs() {
       <Navbar />
 
       {/* ── Hero Banner ───────────────────────── */}
-      <section className={styles.heroBanner}>
-        <div className={styles.heroPlaceholder} aria-hidden="true" />
-        <div className={styles.heroOverlay}>
-          <div className="container">
-            <p className={styles.heroKicker}>Who We Are</p>
-            <h1 className={styles.heroTitle}>About Us</h1>
-            <p className={styles.heroSub}>
-              Global Polymer &amp; Chemical Supply, Built on Expertise.
-            </p>
-          </div>
-        </div>
-      </section>
+          <section className={styles.heroBanner}>
+            <canvas ref={canvasRef} className={styles.heroCanvas} aria-hidden="true" />
+            <div className={styles.heroOverlay}>
+              <div className="container">
+                {/* <p className={styles.heroKicker}>Who We Are</p> */}
+                <h1 className={styles.heroTitle}>About Us</h1>
+                <p className={styles.heroSub}>
+                  Global Polymer &amp; Chemical Supply, Built on Expertise.
+                </p>
+              </div>
+            </div>
+          </section>
 
       <main>
 
-        {/* ── Section 1: Image left / Who are we right ── */}
-        <section className={`${styles.splitSection} section`}>
-          <div className="container">
-            <div
-              ref={s1.ref}
-              className={`${styles.splitGrid} reveal ${s1.visible ? "revealVisible" : ""}`}
-            >
-              <div className={styles.imgWrap}>
-                <div className={styles.imgPlaceholder}>
-                  <span className={styles.imgPlaceholderText}>Image coming soon</span>
-                </div>
-              </div>
-              <div className={styles.splitContent}>
-                <div className="kicker">
-                  <span className="kickerDot" aria-hidden="true" /> About Solva
-                </div>
-                <h2 className={styles.splitTitle}>Who Are We?</h2>
-                <p className={styles.splitDesc}>
-                  Solva Chemicals Corporation is a specialty chemicals and polymer solutions company
-                  committed to connecting innovation with industry. We work with manufacturers,
-                  processors, and distributors to deliver reliable access to high-quality chemical
-                  and polymer products that power modern manufacturing and infrastructure.
-                </p>
-                <p className={styles.splitDesc}>
-                  Our focus is to simplify complex supply chains and provide dependable sourcing,
-                  technical guidance, and market insight that help our customers operate more
-                  efficiently and competitively.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Section 2: Who are we continued left / Image right ── */}
-        <section className={`${styles.splitSection} ${styles.splitAlt} section`}>
-          <div className="container">
-            <div
-              ref={s2.ref}
-              className={`${styles.splitGrid} ${styles.splitReverse} reveal ${s2.visible ? "revealVisible" : ""}`}
-            >
-              <div className={styles.splitContent}>
-                <div className="kicker">
-                  <span className="kickerDot" aria-hidden="true" /> Our Experience
-                </div>
-                <h2 className={styles.splitTitle}>Built on Expertise</h2>
-                <p className={styles.splitDesc}>
-                  Our team brings together over 40 years of collaborative technical and commercial
-                  experience in the chemical and polymer industry. This depth of knowledge allows us
-                  to understand the practical challenges faced by manufacturers, converters, and
-                  industrial customers. We leverage this expertise to recommend materials, identify
-                  process efficiencies, and ensure that the products we supply perform reliably
-                  within real-world production environments.
-                </p>
-                <p className={styles.splitDesc}>
-                  What truly separates Solva from traditional chemical distributors is our
-                  customer-first approach. We recognize that no two customers operate the same way.
-                  Instead of offering one-size-fits-all products, we work closely with every client
-                  to develop tailored material solutions aligned with their technical requirements,
-                  cost targets, and operational goals. Our objective is to become a trusted long-term
-                  partner who helps customers move from molecules to market with confidence.
-                </p>
-              </div>
-              <div className={styles.imgWrap}>
-                <div className={styles.imgPlaceholder}>
-                  <span className={styles.imgPlaceholderText}>Image coming soon</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <WhoWeAreCarousel />
 
         {/* ── Our Values ────────────────────────── */}
         <section className={styles.valuesSection}>
