@@ -2,11 +2,12 @@ import Navbar from "../components/layout/Navbar.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import useReveal from "../assets/js/hooks/useReveal.js";
 import styles from "../components/sections/products.module.css";
-import product11 from "../assets/images/product11.jpg";
-import engineering from "../assets/images/engineering2.jpg";
-import polymerFilms from "../assets/images/polymerFilms.jpg";
+import polyolefins from "../assets/images/polyolefins.png";
+import engPolymer from "../assets/images/engPolymer.png";
+import polymerFilms from "../assets/images/polymerFilms2.png";
 import chemicals from "../assets/images/chemicals.jpg";
 import Icon from "../components/ui/Icon.jsx";
+import productHeader from "../assets/images/productHeader2.png";
 
 const masterbatchCards = [
   {
@@ -39,7 +40,7 @@ const categories = [
   {
     id: "polyolefins",
     title: "Polyolefins",
-    img: product11,
+    img: polyolefins,
     imgAlt: "HDPE plastic pellets",
     items: [
       "HDPE (High-Density Polyethylene)",
@@ -52,7 +53,7 @@ const categories = [
   {
     id: "engineering-polymers",
     title: "Engineering & Performance Polymers",
-    img: engineering,
+    img: engPolymer,
     imgAlt: "Engineering polymer resin pellets",
     items: [
       "PET (Polyethylene Terephthalate)",
@@ -159,7 +160,10 @@ export default function Products() {
 
       {/* ── Hero Banner ───────────────────────── */}
       <section className={styles.heroBanner}>
-        <div className={styles.heroPlaceholder} aria-hidden="true" />
+        <img src= {productHeader}
+        alt="Products"
+        className={styles.heroImg}
+        />
         <div className={styles.heroOverlay}>
           <div className="container">
             <p className={styles.heroKicker}>Our Portfolio</p>
@@ -191,27 +195,43 @@ export default function Products() {
               </div>
 
               <div className={styles.introRight}>
-                {categories.map((cat) => (
+                {[
+    { id: "polyolefins", label: "Polyolefins", sub: "HDPE · LDPE · LLDPE · PP" },
+    { id: "engineering-polymers", label: "Engineering & Performance Polymers", sub: "PET · PVC · Specialty compounds" },
+    { id: "polymer-films", label: "Polymer Films", sub: "PE · BOPP · MDOPE · Nylon · PET" },
+    { id: "specialty-chemicals", label: "Specialty Chemicals", sub: "Adhesives · Coatings · Catalysts" },
+    { id: "masterbatches", label: "Masterbatches", sub: "Color · Additive · Filler" },
+    { id: "custom-sourcing", label: "Custom Material Sourcing", sub: "Tailored to your requirements" },
+  ].map((item) => (
+    <a key={item.id} className={styles.quickCard} href={`#${item.id}`}>
+      <div className={styles.quickCardInner}>
+        <span className={styles.quickCardLabel}>{item.label}</span>
+        <span className={styles.quickCardSub}>{item.sub}</span>
+      </div>
+      <span className={styles.quickCardArrow}>›</span>
+    </a>
+  ))}
+                {/* {categories.map((cat) => (
                   <a key={cat.id} className={styles.quickLink} href={`#${cat.id}`}>
                     <span className={styles.quickDot} aria-hidden="true" />
                     <span className={styles.quickLabel}>{cat.title}</span>
-                    <span className={styles.quickArrow}>→</span>
+                    <span className={styles.quickArrow}>›</span>
                   </a>
                   
                 ))}
                 
 
-{/* intro quick links */}
-                <a key="masterbatches" className={styles.quickLink} href="#masterbatches">
-  <span className={styles.quickDot} aria-hidden="true" />
-  <span className={styles.quickLabel}>Masterbatches</span>
-  <span className={styles.quickArrow}>→</span>
-</a>
-                <a className={styles.quickLink} href="#custom-sourcing">
+                {/* intro quick links */}
+                                {/* <a key="masterbatches" className={styles.quickLink} href="#masterbatches">
                   <span className={styles.quickDot} aria-hidden="true" />
-                  <span className={styles.quickLabel}>Custom Material Sourcing</span>
-                  <span className={styles.quickArrow}>→</span>
+                  <span className={styles.quickLabel}>Masterbatches</span>
+                <span className={styles.quickArrow}>›</span>
                 </a>
+                  <a className={styles.quickLink} href="#custom-sourcing">
+                    <span className={styles.quickDot} aria-hidden="true" />
+                    <span className={styles.quickLabel}>Custom Material Sourcing</span>
+                    <span className={styles.quickArrow}>›</span>
+                  </a> */} 
               </div>
             </div>
           </div>
