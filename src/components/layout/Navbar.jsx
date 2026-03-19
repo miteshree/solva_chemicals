@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react";   
-import {Link} from "react-router-dom";
-import { brand, navLinks } from "../../assets/js/content.js";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { brand, capabilitiesDropdown } from "../../assets/js/content.js";
 import logo from "../../assets/images/solva_logo_nav.png";
 import styles from "./navbar.module.css";
 
@@ -17,43 +17,81 @@ function useBodyScrollLock(locked) {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [capOpen, setCapOpen] = useState(false);
   useBodyScrollLock(open);
 
-  const links = useMemo(() => navLinks, []);
+  const capLinks = useMemo(() => capabilitiesDropdown, []);
+  const capRef = useRef(null);
 
   useEffect(() => {
     const onKeyDown = (e) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        setCapOpen(false);
+      }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
+  useEffect(() => {
+    if (!capOpen) return;
+    const onPointerDown = (e) => {
+      if (!capRef.current) return;
+      if (!capRef.current.contains(e.target)) setCapOpen(false);
+    };
+    window.addEventListener("pointerdown", onPointerDown);
+    return () => window.removeEventListener("pointerdown", onPointerDown);
+  }, [capOpen]);
+
   return (
     <header className={styles.header}>
       <div className={`${styles.inner} container`}>
-        <a className={styles.brand} href="#main" aria-label={brand.name}>
+        <Link className={styles.brand} to={{ pathname: "/", hash: "#main" }} aria-label={brand.name}>
           <img className={styles.logo} src={logo} alt="" />
-        </a>
+        </Link>
 
         <nav className={styles.nav} aria-label="Primary">
-          {links.map((l) =>
-            l.href.startsWith("/") ? (
-              <Link key={l.href} className={styles.link} to={l.href}>
-                {l.label}
-              </Link>
-            ) : (
-              <a key={l.href} className={styles.link} href={l.href}>
-                {l.label}
-              </a>
-            )
-          )}
+          <div className={styles.dropdown} ref={capRef}>
+            <button
+              type="button"
+              className={`${styles.link} ${styles.dropdownTrigger}`}
+              aria-haspopup="menu"
+              aria-expanded={capOpen}
+              onClick={() => setCapOpen((v) => !v)}
+            >
+              Capabilities <span className={styles.caret} aria-hidden="true" />
+            </button>
+            <div className={`${styles.menu} ${capOpen ? styles.menuOpen : ""}`} role="menu">
+              {capLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  role="menuitem"
+                  className={styles.menuItem}
+                  to={{ pathname: "/", hash: l.href }}
+                  onClick={() => setCapOpen(false)}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <Link className={styles.link} to="/products">
+            Products
+          </Link>
+          <Link className={styles.link} to={{ pathname: "/", hash: "#sustainability" }}>
+            Sustainability
+          </Link>
+          <Link className={styles.link} to={{ pathname: "/", hash: "#contact" }}>
+            Contact
+          </Link>
         </nav>
 
         <div className={styles.actions}>
-          <a className="btnGhost" href="#contact">
-            Request a quote
-          </a>
+          <Link className="btnPrimary" to={{ pathname: "/", hash: "#contact" }}>
+            Request a Quote
+          </Link>
           <button
             className={styles.menuBtn}
             type="button"
@@ -80,33 +118,51 @@ export default function Navbar() {
             </button>
           </div>
           <div className={styles.mobileLinks}>
-            {links.map((l) => l.href.startsWith("/") ? (
-              <Link
-                  key={l.href}
-                  className={styles.mobileLink}
-                  to={l.href}
-                  onClick={() => setOpen(false)}
-                >
-                  {l.label}
-                </Link>
-              ) : (
-                  <a
-                key={l.href}
-                className={styles.mobileLink}
-                href={l.href}
-                onClick={() => setOpen(false)}
-              >
-                {l.label}
-              </a>
-            ))}
+            <details className={styles.mobileGroup}>
+              <summary className={styles.mobileSummary}>Capabilities</summary>
+              <div className={styles.mobileSubLinks}>
+                {capLinks.map((l) => (
+                  <Link
+                    key={l.href}
+                    className={styles.mobileSubLink}
+                    to={{ pathname: "/", hash: l.href }}
+                    onClick={() => setOpen(false)}
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
+
+            <Link className={styles.mobileLink} to="/products" onClick={() => setOpen(false)}>
+              Products
+            </Link>
+            <Link
+              className={styles.mobileLink}
+              to={{ pathname: "/", hash: "#sustainability" }}
+              onClick={() => setOpen(false)}
+            >
+              Sustainability
+            </Link>
+            <Link
+              className={styles.mobileLink}
+              to={{ pathname: "/", hash: "#contact" }}
+              onClick={() => setOpen(false)}
+            >
+              Contact
+            </Link>
           </div>
           <div className={styles.mobileCtas}>
-            <a className="btnPrimary" href="#contact" onClick={() => setOpen(false)}>
-              Get in touch
-            </a>
-            <a className="btnGhost" href="#market-pulse" onClick={() => setOpen(false)}>
-              See market pulse
-            </a>
+            <Link
+              className="btnPrimary"
+              to={{ pathname: "/", hash: "#contact" }}
+              onClick={() => setOpen(false)}
+            >
+              Request a Quote
+            </Link>
+            <Link className="btnGhost" to="/products" onClick={() => setOpen(false)}>
+              View products
+            </Link>
           </div>
         </div>
         <button

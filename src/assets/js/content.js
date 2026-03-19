@@ -13,11 +13,19 @@ export const navLinks = [
   { label: "Market Pulse", href: "#market-pulse" },
   { label: "Technical Services", href: "#solutions" },
   { label: "Masterbatches", href: "#masterbatches" },
-  {label: "Products", href: "/products"},
+  { label: "Products", href: "/products" },
   { label: "Quality", href: "#quality" },
   { label: "Supply Chain", href: "#supply-chain" },
   { label: "Sustainability", href: "#sustainability" },
   { label: "Contact", href: "#contact" },
+];
+
+export const capabilitiesDropdown = [
+  { label: "Market Pulse", href: "#market-pulse" },
+  { label: "Technical Services", href: "#solutions" },
+  { label: "Masterbatches", href: "#masterbatches" },
+  { label: "Quality", href: "#quality" },
+  { label: "Supply Chain", href: "#supply-chain" },
 ];
 
 export const capabilities = [

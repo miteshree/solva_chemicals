@@ -72,6 +72,74 @@
   gap: 18px;
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdownTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.caret {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-1px) rotate(45deg);
+  opacity: 0.65;
+}
+
+.dropdownTrigger[aria-expanded="true"] .caret {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 10;
+  min-width: 220px;
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid rgba(11, 60, 93, 0.14);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 60px rgba(11, 60, 93, 0.18);
+  display: grid;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.menuOpen {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.menuItem {
+  padding: 10px 10px;
+  border-radius: 12px;
+  color: var(--text);
+  border: 1px solid transparent;
+  background: rgba(11, 60, 93, 0.02);
+  transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.menuItem:hover {
+  border-color: rgba(31, 163, 163, 0.35);
+  background: rgba(31, 163, 163, 0.08);
+  transform: translateY(-1px);
+}
+
 .link {
   position: relative;
   font-size: 14px;
@@ -195,6 +263,59 @@
   display: grid;
   gap: 6px;
   padding: 10px 0 14px;
+}
+
+.mobileGroup {
+  border-radius: 14px;
+  border: 1px solid rgba(11, 60, 93, 0.14);
+  background: rgba(11, 60, 93, 0.03);
+  overflow: hidden;
+}
+
+.mobileSummary {
+  list-style: none;
+  cursor: pointer;
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text);
+}
+
+.mobileSummary::-webkit-details-marker {
+  display: none;
+}
+
+.mobileSummary::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.65;
+}
+
+.mobileGroup[open] .mobileSummary::after {
+  transform: rotate(-135deg);
+}
+
+.mobileSubLinks {
+  display: grid;
+  gap: 6px;
+  padding: 0 12px 12px;
+}
+
+.mobileSubLink {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 60, 93, 0.12);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--text);
+}
+
+.mobileSubLink:hover {
+  border-color: rgba(31, 163, 163, 0.45);
 }
 
 .mobileLink {
