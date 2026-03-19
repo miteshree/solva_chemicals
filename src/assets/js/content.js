@@ -9,6 +9,7 @@ export const brand = {
 };
 
 export const navLinks = [
+  { label: "About Us", href: "/about-us"},
   { label: "Capabilities", href: "#capabilities" },
   { label: "Market Pulse", href: "#market-pulse" },
   { label: "Technical Services", href: "#solutions" },

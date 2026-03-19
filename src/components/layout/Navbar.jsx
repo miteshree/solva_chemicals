@@ -80,6 +80,9 @@ export default function Navbar() {
           <Link className={styles.link} to="/products">
             Products
           </Link>
+          <Link className={styles.link} to="/about-us">
+            About Us
+          </Link>
           <Link className={styles.link} to={{ pathname: "/", hash: "#sustainability" }}>
             Sustainability
           </Link>
@@ -136,6 +139,9 @@ export default function Navbar() {
 
             <Link className={styles.mobileLink} to="/products" onClick={() => setOpen(false)}>
               Products
+            </Link>
+            <Link className={styles.mobileLink} to="/about-us" onClick={() => setOpen(false)}>
+              About Us
             </Link>
             <Link
               className={styles.mobileLink}
