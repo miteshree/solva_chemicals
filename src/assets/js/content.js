@@ -23,7 +23,6 @@ export const navLinks = [
 export const capabilitiesDropdown = [
   { label: "Market Pulse", href: "#market-pulse" },
   { label: "Technical Services", href: "#solutions" },
-  { label: "Masterbatches", href: "#masterbatches" },
   { label: "Quality", href: "#quality" },
   { label: "Supply Chain", href: "#supply-chain" },
 ];

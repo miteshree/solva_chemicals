@@ -2,15 +2,45 @@ import Navbar from "../components/layout/Navbar.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import useReveal from "../assets/js/hooks/useReveal.js";
 import styles from "../components/sections/products.module.css";
-import product11 from "../assets/images/product11.jpg";
-import engineering from "../assets/images/engineering2.jpg";
-import polymerFilms from "../assets/images/polymerFilms.jpg";
+import polyolefins from "../assets/images/polyolefins.png";
+import engPolymer from "../assets/images/engPolymer.png";
+import polymerFilms from "../assets/images/polymerFilms2.png";
 import chemicals from "../assets/images/chemicals.jpg";
+import Icon from "../components/ui/Icon.jsx";
+import productHeader from "../assets/images/productHeader2.png";
+
+const masterbatchCards = [
+  {
+    title: "Color Masterbatches",
+    desc: "Standard and custom-matched colors for consistent, vibrant coloring across all polymer types and processing methods.",
+    icon: "palette",
+    dots: ["#1FA3A3", "#2E6FA7", "#0B3C5D", "#B8C2CC"],
+  },
+  {
+    title: "Additive Masterbatches",
+    desc: "UV stabilizers, anti-block, slip, antistatic, and flame retardant additives in concentrated pellet form.",
+    icon: "bolt",
+    dots: ["#2E6FA7", "#1FA3A3", "#0B3C5D"],
+  },
+  {
+    title: "White & Black Masterbatches",
+    desc: "High-opacity TiO₂, white, and carbon black masterbatches for excellent coverage and UV protection.",
+    icon: "layers",
+    dots: ["#333333", "#B8C2CC", "#0B3C5D"],
+  },
+  {
+    title: "Filler Masterbatches",
+    desc: "CaCO₃ and talc-based filler masterbatches to optimize cost while maintaining mechanical properties.",
+    icon: "beads",
+    dots: ["#B8C2CC", "#2E6FA7", "#1FA3A3"],
+  },
+];
+
 const categories = [
   {
     id: "polyolefins",
     title: "Polyolefins",
-    img: product11,
+    img: polyolefins,
     imgAlt: "HDPE plastic pellets",
     items: [
       "HDPE (High-Density Polyethylene)",
@@ -23,7 +53,7 @@ const categories = [
   {
     id: "engineering-polymers",
     title: "Engineering & Performance Polymers",
-    img: engineering,
+    img: engPolymer,
     imgAlt: "Engineering polymer resin pellets",
     items: [
       "PET (Polyethylene Terephthalate)",
@@ -63,6 +93,16 @@ const categories = [
     desc: "These materials help improve manufacturing efficiency, enhance product performance, and protect equipment and infrastructure in demanding industrial environments.",
   },
 ];
+
+function DotRow({ dots }) {
+  return (
+    <div className={styles.dots} aria-hidden="true">
+      {dots.map((c) => (
+        <span key={c} className={styles.dot} style={{ background: c }} />
+      ))}
+    </div>
+  );
+}
 
 function CategoryCard({ cat, index }) {
   const { ref, visible } = useReveal({ threshold: 0.08 });
@@ -120,7 +160,10 @@ export default function Products() {
 
       {/* ── Hero Banner ───────────────────────── */}
       <section className={styles.heroBanner}>
-        <div className={styles.heroPlaceholder} aria-hidden="true" />
+        <img src= {productHeader}
+        alt="Products"
+        className={styles.heroImg}
+        />
         <div className={styles.heroOverlay}>
           <div className="container">
             <p className={styles.heroKicker}>Our Portfolio</p>
@@ -152,18 +195,43 @@ export default function Products() {
               </div>
 
               <div className={styles.introRight}>
-                {categories.map((cat) => (
+                {[
+    { id: "polyolefins", label: "Polyolefins", sub: "HDPE · LDPE · LLDPE · PP" },
+    { id: "engineering-polymers", label: "Engineering & Performance Polymers", sub: "PET · PVC · Specialty compounds" },
+    { id: "polymer-films", label: "Polymer Films", sub: "PE · BOPP · MDOPE · Nylon · PET" },
+    { id: "specialty-chemicals", label: "Specialty Chemicals", sub: "Adhesives · Coatings · Catalysts" },
+    { id: "masterbatches", label: "Masterbatches", sub: "Color · Additive · Filler" },
+    { id: "custom-sourcing", label: "Custom Material Sourcing", sub: "Tailored to your requirements" },
+  ].map((item) => (
+    <a key={item.id} className={styles.quickCard} href={`#${item.id}`}>
+      <div className={styles.quickCardInner}>
+        <span className={styles.quickCardLabel}>{item.label}</span>
+        <span className={styles.quickCardSub}>{item.sub}</span>
+      </div>
+      <span className={styles.quickCardArrow}>›</span>
+    </a>
+  ))}
+                {/* {categories.map((cat) => (
                   <a key={cat.id} className={styles.quickLink} href={`#${cat.id}`}>
                     <span className={styles.quickDot} aria-hidden="true" />
                     <span className={styles.quickLabel}>{cat.title}</span>
-                    <span className={styles.quickArrow}>→</span>
+                    <span className={styles.quickArrow}>›</span>
                   </a>
+                  
                 ))}
-                <a className={styles.quickLink} href="#custom-sourcing">
+                
+
+                {/* intro quick links */}
+                                {/* <a key="masterbatches" className={styles.quickLink} href="#masterbatches">
                   <span className={styles.quickDot} aria-hidden="true" />
-                  <span className={styles.quickLabel}>Custom Material Sourcing</span>
-                  <span className={styles.quickArrow}>→</span>
+                  <span className={styles.quickLabel}>Masterbatches</span>
+                <span className={styles.quickArrow}>›</span>
                 </a>
+                  <a className={styles.quickLink} href="#custom-sourcing">
+                    <span className={styles.quickDot} aria-hidden="true" />
+                    <span className={styles.quickLabel}>Custom Material Sourcing</span>
+                    <span className={styles.quickArrow}>›</span>
+                  </a> */} 
               </div>
             </div>
           </div>
@@ -175,7 +243,37 @@ export default function Products() {
         {categories.map((cat, i) => (
           <CategoryCard key={cat.id} cat={cat} index={i} />
         ))}
-
+                        {/* ── Masterbatches ─────────────────────────── */}
+<section id="masterbatches" className={`${styles.masterbatchSection} section`}>
+  <div className="container">
+    <div className={styles.mbHead}>
+      <div className="kicker">
+        <span className="kickerDot" aria-hidden="true" /> Masterbatches
+      </div>
+      <h2 className={styles.mbTitle}>
+        Color &amp; Performance <span className={styles.mbEm}>Masterbatches</span>
+      </h2>
+      <p className={styles.mbLead}>
+        High-quality masterbatch concentrates for coloring, enhancing properties, and
+        optimizing costs across polymer processing applications.
+      </p>
+    </div>
+    <div className={styles.mbGrid}>
+      {masterbatchCards.map((c) => (
+        <article key={c.title} className={`${styles.mbCard} card`}>
+          <div className={styles.mbTop}>
+            <div className={styles.mbIcon}>
+              <Icon name={c.icon} size={22} />
+            </div>
+            <DotRow dots={c.dots} />
+          </div>
+          <div className={styles.mbCardTitle}>{c.title}</div>
+          <div className={styles.mbCardDesc}>{c.desc}</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
         {/* ── Custom Material Sourcing ──────────── */}
         <section id="custom-sourcing" className={`${styles.customSection} section`}>
           <div className="container">
