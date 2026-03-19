@@ -3,7 +3,7 @@ export const brand = {
   tagline: "Global Polymer and Chemical Supply, Built on Expertise.",
   subtag:
     "Delivering polymers, specialty chemicals, and material solutions through trusted global partnerships.",
-  email: "sales@solvachemicals.com",
+  email: "info@solvachemicals.com",
   phone: "+1 (000) 000-0000",
   location: "North America • Global coverage",
 };

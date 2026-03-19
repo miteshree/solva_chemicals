@@ -215,7 +215,7 @@ export default function Products() {
                 availability, documentation, and practical next steps.
               </p>
               <a className="btnPrimary" href="mailto:sales@solvachemicals.com">
-                Contact us at sales@solvachemicals.com
+                Contact us at info@solvachemicals.com
               </a>
             </div>
           </div>
