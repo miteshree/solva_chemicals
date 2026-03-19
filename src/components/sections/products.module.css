@@ -340,3 +340,117 @@
     padding: 36px 20px;
   }
 }
+/* ── Masterbatches ─────────────────────────── */
+.masterbatchSection {
+  border-top: 1px solid var(--border);
+}
+
+.mbHead {
+  margin-bottom: 18px;
+}
+
+.mbTitle {
+  margin: 10px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--navy);
+}
+
+.mbEm {
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mbLead {
+  color: var(--muted);
+  max-width: 70ch;
+  line-height: 1.7;
+  font-weight: 300;
+  font-size: 15px;
+  margin: 10px 0 0;
+}
+
+.mbGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.mbCard {
+  padding: 18px;
+  min-height: 186px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mbCard::after {
+  content: "";
+  position: absolute;
+  inset: auto -40% -50% auto;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle at 30% 30%, rgba(26, 109, 181, 0.14), transparent 62%);
+  pointer-events: none;
+}
+
+.mbTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mbIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(15, 212, 200, 0.14);
+  border: 1px solid rgba(15, 212, 200, 0.22);
+  color: var(--navy);
+}
+
+.dots {
+  display: inline-flex;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgba(7, 24, 41, 0.04);
+}
+
+.mbCardTitle {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+.mbCardDesc {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+@media (max-width: 820px) {
+  .mbGrid {
+    grid-template-columns: 1fr;
+  }
+}

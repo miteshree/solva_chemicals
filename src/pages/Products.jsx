@@ -6,6 +6,35 @@ import product11 from "../assets/images/product11.jpg";
 import engineering from "../assets/images/engineering2.jpg";
 import polymerFilms from "../assets/images/polymerFilms.jpg";
 import chemicals from "../assets/images/chemicals.jpg";
+import Icon from "../components/ui/Icon.jsx";
+
+const masterbatchCards = [
+  {
+    title: "Color Masterbatches",
+    desc: "Standard and custom-matched colors for consistent, vibrant coloring across all polymer types and processing methods.",
+    icon: "palette",
+    dots: ["#1FA3A3", "#2E6FA7", "#0B3C5D", "#B8C2CC"],
+  },
+  {
+    title: "Additive Masterbatches",
+    desc: "UV stabilizers, anti-block, slip, antistatic, and flame retardant additives in concentrated pellet form.",
+    icon: "bolt",
+    dots: ["#2E6FA7", "#1FA3A3", "#0B3C5D"],
+  },
+  {
+    title: "White & Black Masterbatches",
+    desc: "High-opacity TiO₂, white, and carbon black masterbatches for excellent coverage and UV protection.",
+    icon: "layers",
+    dots: ["#333333", "#B8C2CC", "#0B3C5D"],
+  },
+  {
+    title: "Filler Masterbatches",
+    desc: "CaCO₃ and talc-based filler masterbatches to optimize cost while maintaining mechanical properties.",
+    icon: "beads",
+    dots: ["#B8C2CC", "#2E6FA7", "#1FA3A3"],
+  },
+];
+
 const categories = [
   {
     id: "polyolefins",
@@ -63,6 +92,16 @@ const categories = [
     desc: "These materials help improve manufacturing efficiency, enhance product performance, and protect equipment and infrastructure in demanding industrial environments.",
   },
 ];
+
+function DotRow({ dots }) {
+  return (
+    <div className={styles.dots} aria-hidden="true">
+      {dots.map((c) => (
+        <span key={c} className={styles.dot} style={{ background: c }} />
+      ))}
+    </div>
+  );
+}
 
 function CategoryCard({ cat, index }) {
   const { ref, visible } = useReveal({ threshold: 0.08 });
@@ -158,7 +197,16 @@ export default function Products() {
                     <span className={styles.quickLabel}>{cat.title}</span>
                     <span className={styles.quickArrow}>→</span>
                   </a>
+                  
                 ))}
+                
+
+{/* intro quick links */}
+                <a key="masterbatches" className={styles.quickLink} href="#masterbatches">
+  <span className={styles.quickDot} aria-hidden="true" />
+  <span className={styles.quickLabel}>Masterbatches</span>
+  <span className={styles.quickArrow}>→</span>
+</a>
                 <a className={styles.quickLink} href="#custom-sourcing">
                   <span className={styles.quickDot} aria-hidden="true" />
                   <span className={styles.quickLabel}>Custom Material Sourcing</span>
@@ -175,7 +223,37 @@ export default function Products() {
         {categories.map((cat, i) => (
           <CategoryCard key={cat.id} cat={cat} index={i} />
         ))}
-
+                        {/* ── Masterbatches ─────────────────────────── */}
+<section id="masterbatches" className={`${styles.masterbatchSection} section`}>
+  <div className="container">
+    <div className={styles.mbHead}>
+      <div className="kicker">
+        <span className="kickerDot" aria-hidden="true" /> Masterbatches
+      </div>
+      <h2 className={styles.mbTitle}>
+        Color &amp; Performance <span className={styles.mbEm}>Masterbatches</span>
+      </h2>
+      <p className={styles.mbLead}>
+        High-quality masterbatch concentrates for coloring, enhancing properties, and
+        optimizing costs across polymer processing applications.
+      </p>
+    </div>
+    <div className={styles.mbGrid}>
+      {masterbatchCards.map((c) => (
+        <article key={c.title} className={`${styles.mbCard} card`}>
+          <div className={styles.mbTop}>
+            <div className={styles.mbIcon}>
+              <Icon name={c.icon} size={22} />
+            </div>
+            <DotRow dots={c.dots} />
+          </div>
+          <div className={styles.mbCardTitle}>{c.title}</div>
+          <div className={styles.mbCardDesc}>{c.desc}</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
         {/* ── Custom Material Sourcing ──────────── */}
         <section id="custom-sourcing" className={`${styles.customSection} section`}>
           <div className="container">
