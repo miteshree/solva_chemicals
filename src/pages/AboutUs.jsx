@@ -4,7 +4,7 @@ import useReveal from "../assets/js/hooks/useReveal.js";
 import styles from "../components/sections/aboutus.module.css";
 // import WhorvImg1 from "../assets/images/whorvImg1.jpg";
 import useHexCanvas from "../assets/js/hooks/useHexCanvas.js";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 
 const values = [
@@ -68,32 +68,45 @@ const carouselCards = [
     imgAlt: "Chemical manufacturing facility",
     tag: "About Solva",
     title: "Who Are We?",
-    desc: "Solva Chemicals Corporation is a specialty chemicals and polymer solutions company committed to connecting innovation with industry. We work with manufacturers, processors, and distributors to deliver reliable access to high-quality chemical and polymer products that power modern manufacturing and infrastructure. Our focus is to simplify complex supply chains and provide dependable sourcing, technical guidance, and market insight.",
+    desc: "Solva Chemicals Corporation is a specialty chemicals and polymer solutions company committed to connecting innovation with industry. We work with manufacturers, processors, and distributors to deliver reliable access to high-quality chemical and polymer products.",
   },
   {
     img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
     imgAlt: "Industry expertise and experience",
     tag: "Our Experience",
     title: "40+ Years of Expertise",
-    desc: "Our team brings together over 40 years of collaborative technical and commercial experience in the chemical and polymer industry. This depth of knowledge allows us to understand the practical challenges faced by manufacturers, converters, and industrial customers. We leverage this expertise to recommend materials, identify process efficiencies, and ensure that the products we supply perform reliably within real-world production environments.",
+    desc: "Our team brings together over 40 years of collaborative technical and commercial experience in the chemical and polymer industry. We leverage this expertise to recommend materials, identify process efficiencies, and ensure reliable performance.",
   },
   {
     img: "https://images.unsplash.com/photo-1494961104209-3c223057bd26?w=800&q=80",
     imgAlt: "Global supply chain and logistics",
     tag: "Our Approach",
     title: "Molecules to Market",
-    desc: "What truly separates Solva from traditional chemical distributors is our customer-first approach. We recognize that no two customers operate the same way. Instead of offering one-size-fits-all products, we work closely with every client to develop tailored material solutions aligned with their technical requirements, cost targets, and operational goals. Our objective is to become a trusted long-term partner who helps customers move from molecules to market with confidence.",
+    desc: "What truly separates Solva from traditional chemical distributors is our customer-first approach. We work closely with every client to develop tailored material solutions aligned with their technical requirements and operational goals.",
   },
 ];
 
 function WhoWeAreCarousel() {
   const [current, setCurrent] = useState(0);
   const total = carouselCards.length;
+  const intervalRef = useRef(null);
 
-  const prev = () => setCurrent((c) => (c - 1 + total) % total);
-  const next = () => setCurrent((c) => (c + 1) % total);
+  const startAuto = () => {
+    intervalRef.current = setInterval(() => {
+      setCurrent((c) => (c + 1) % total);
+    }, 3500);
+  };
 
-  const card = carouselCards[current];
+  useEffect(() => {
+    startAuto();
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  const goTo = (i) => {
+    setCurrent(i);
+    clearInterval(intervalRef.current);
+    startAuto();
+  };
 
   return (
     <section className={styles.carouselSection}>
@@ -106,55 +119,55 @@ function WhoWeAreCarousel() {
         </div>
 
         <div className={styles.carouselWrap}>
-          <div className={`${styles.carouselCard} card`}>
-            {/* Image */}
-            <div className={styles.carouselImgWrap}>
-              <img
-                key={card.img}
-                src={card.img}
-                alt={card.imgAlt}
-                className={styles.carouselImg}
-                loading="lazy"
-              />
-              <div className={styles.carouselImgOverlay} />
-              <span className={styles.carouselTag}>{card.tag}</span>
-            </div>
+          {/* Track — all 3 cards visible */}
+          <div className={styles.carouselTrack}>
+            {carouselCards.map((card, i) => {
+              const isActive = i === current;
+              const isPrev   = i === (current - 1 + total) % total;
+              const isNext   = i === (current + 1) % total;
 
-            {/* Content */}
-            <div className={styles.carouselContent}>
-              <h3 className={styles.carouselTitle}>{card.title}</h3>
-              <p className={styles.carouselDesc}>{card.desc}</p>
-            </div>
+              return (
+                <div
+                  key={i}
+                  className={`
+                    ${styles.carouselSlide}
+                    ${isActive ? styles.slideActive : ""}
+                    ${isPrev   ? styles.slidePrev   : ""}
+                    ${isNext   ? styles.slideNext   : ""}
+                  `}
+                  onClick={() => goTo(i)}
+                >
+                  <div className={`${styles.carouselCard} card`}>
+                    <div className={styles.carouselImgWrap}>
+                      <img
+                        src={card.img}
+                        alt={card.imgAlt}
+                        className={styles.carouselImg}
+                        loading="lazy"
+                      />
+                      <div className={styles.carouselImgOverlay} />
+                      <span className={styles.carouselTag}>{card.tag}</span>
+                    </div>
+                    <div className={styles.carouselContent}>
+                      <h3 className={styles.carouselTitle}>{card.title}</h3>
+                      <p className={styles.carouselDesc}>{card.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          {/* Controls */}
-          <div className={styles.carouselControls}>
-            <button
-              className={styles.carouselBtn}
-              onClick={prev}
-              aria-label="Previous card"
-            >
-              ‹
-            </button>
-
-            <div className={styles.carouselDots}>
-              {carouselCards.map((_, i) => (
-                <button
-                  key={i}
-                  className={`${styles.dot} ${i === current ? styles.dotActive : ""}`}
-                  onClick={() => setCurrent(i)}
-                  aria-label={`Go to card ${i + 1}`}
-                />
-              ))}
-            </div>
-
-            <button
-              className={styles.carouselBtn}
-              onClick={next}
-              aria-label="Next card"
-            >
-              ›
-            </button>
+          {/* Dot indicators */}
+          <div className={styles.carouselDots}>
+            {carouselCards.map((_, i) => (
+              <button
+                key={i}
+                className={`${styles.dot} ${i === current ? styles.dotActive : ""}`}
+                onClick={() => goTo(i)}
+                aria-label={`Go to card ${i + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
