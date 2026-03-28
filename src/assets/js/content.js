@@ -4,8 +4,8 @@ export const brand = {
   subtag:
     "Delivering polymers, specialty chemicals, and material solutions through trusted global partnerships.",
   email: "info@solvachemicals.com",
-  phone: "+1 (000) 000-0000",
-  location: "North America • Global coverage",
+  phone: "+1 (604) 621-0107",
+  location: "North America",
 };
 
 export const navLinks = [
@@ -13,7 +13,7 @@ export const navLinks = [
   { label: "Capabilities", href: "#capabilities" },
   { label: "Market Pulse", href: "#market-pulse" },
   { label: "Technical Services", href: "#solutions" },
-  { label: "Masterbatches", href: "#masterbatches" },
+  { label: "Masterbatches", href: "/products#masterbatches" },
   { label: "Products", href: "/products" },
   { label: "Quality", href: "#quality" },
   { label: "Supply Chain", href: "#supply-chain" },

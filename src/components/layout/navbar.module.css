@@ -36,15 +36,14 @@
 }
 
 .logo {
-  height: 56px;
+  height: 75px;
   width: auto;
-  max-width: 200px;
+  max-width: 220px;
   border-radius: 10px;
   background: transparent;
   padding: 0;
   object-fit: fill;
   filter: saturate(1.05) contrast(1.03);
-  margin-top: 5px;
 }
 
 .brandText {

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { brand, capabilitiesDropdown } from "../../assets/js/content.js";
-import logo from "../../assets/images/solva_logo_nav.png";
+import logo from "../../assets/images/solva_logo_small.png";
 import styles from "./navbar.module.css";
 
 function useBodyScrollLock(locked) {
@@ -76,12 +76,11 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-
-          <Link className={styles.link} to="/products">
-            Products
-          </Link>
           <Link className={styles.link} to="/about-us">
             About Us
+          </Link>     
+          <Link className={styles.link} to="/products">
+            Products
           </Link>
           <Link className={styles.link} to={{ pathname: "/", hash: "#sustainability" }}>
             Sustainability
@@ -136,12 +135,11 @@ export default function Navbar() {
                 ))}
               </div>
             </details>
-
-            <Link className={styles.mobileLink} to="/products" onClick={() => setOpen(false)}>
-              Products
-            </Link>
             <Link className={styles.mobileLink} to="/about-us" onClick={() => setOpen(false)}>
               About Us
+            </Link>    
+            <Link className={styles.mobileLink} to="/products" onClick={() => setOpen(false)}>
+              Products
             </Link>
             <Link
               className={styles.mobileLink}

@@ -35,9 +35,7 @@ export default function Contact() {
     email: "",
     phone: "",
     product: "",
-    quantity: "",
     destination: "",
-    timeline: "",
     message: "",
   });
 
@@ -158,7 +156,7 @@ export default function Contact() {
                 />
               </label>
               <label className={styles.field}>
-                <span className={styles.fieldLabel}>Quantity</span>
+                <span className={styles.fieldLabel}>Quantity (optional)</span>
                 <input
                   className={styles.input}
                   value={form.quantity}
@@ -176,7 +174,7 @@ export default function Contact() {
                 />
               </label>
               <label className={styles.field}>
-                <span className={styles.fieldLabel}>Timeline</span>
+                <span className={styles.fieldLabel}>Timeline (optional)</span>
                 <input
                   className={styles.input}
                   value={form.timeline}

@@ -4,7 +4,7 @@ import styles from "./footer.module.css";
 
 const footerLinks = {
   company: [
-    { label: "About Us", href: "/about" },
+    { label: "About Us", href: "/about-us" },
     { label: "Products", href: "/products" },
     { label: "Sustainability", href: "/#sustainability" },
   ],
