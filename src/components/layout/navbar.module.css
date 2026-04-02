@@ -344,6 +344,13 @@
     align-items: center;
     justify-content: center;
   }
+  .brand {
+    min-width: 0;
+  }
+  .logo {
+    height: 56px;
+    max-width: 190px;
+  }
   .brandTag {
     display: none;
   }
@@ -352,5 +359,9 @@
 @media (max-width: 520px) {
   .brandText {
     display: none;
+  }
+  .logo {
+    height: 44px;
+    max-width: 160px;
   }
 }

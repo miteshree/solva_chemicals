@@ -7,6 +7,7 @@ module.exports = defineConfig({
     port: 5173,
     strictPort: true,
   },
+  base: "./",
   build: {
     outDir: "dist",
   },
