@@ -87,6 +87,25 @@ export default function Icon({ name, size = 22 }) {
           <path d="M13 6l6 6-6 6" />
         </svg>
       );
+    case "chevronLeft":
+      return (
+        <svg {...props} aria-hidden="true">
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      );
+    case "chevronRight":
+      return (
+        <svg {...props} aria-hidden="true">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      );
+    case "droplets":
+      return (
+        <svg {...props} aria-hidden="true">
+          <path d="M12 3s-5 5.4-5 9a5 5 0 0 0 10 0c0-3.6-5-9-5-9Z" />
+          <path d="M5 17.5a3.5 3.5 0 0 1-1-2.5c0-1.4.9-3.2 2.1-4.9" />
+        </svg>
+      );
     case "spark":
       return (
         <svg {...props} aria-hidden="true">

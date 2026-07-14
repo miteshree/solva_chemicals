@@ -8,7 +8,7 @@
 .heroBanner {
   position: relative;
   width: 100%;
-  height: clamp(280px, 36vw, 500px);
+  height: clamp(100px, 30vw, 300px);
   overflow: hidden;
 }
 
@@ -39,7 +39,7 @@
 
 .heroTitle {
   font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 90px);
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--white);

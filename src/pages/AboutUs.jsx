@@ -194,7 +194,7 @@ export default function AboutUs() {
                 {/* <p className={styles.heroKicker}>Who We Are</p> */}
                 <h1 className={styles.heroTitle}>About Us</h1>
                 <p className={styles.heroSub}>
-                  Global Polymer &amp; Chemical Supply, Built on Expertise.
+                  Global Chemical &amp; Polymer Supply, Engineered on Expertise.
                 </p>
               </div>
             </div>
