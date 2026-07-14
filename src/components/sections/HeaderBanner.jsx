@@ -1,9 +1,9 @@
-import banner from "../../assets/images/solva_header.png";
+import banner from "../../assets/images/web banner.png";
 import styles from "./headerbanner.module.css";
 import { useState } from "react";
 
 export default function HeaderBanner() {
-  const [src, setSrc] = useState("/header-banner.jpg");
+  const [src, setSrc] = useState(banner);
 
   return (
     <section className={styles.wrap} aria-label="Solva Chemicals header banner">
