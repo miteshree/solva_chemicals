@@ -8,7 +8,7 @@
 .heroBanner {
   position: relative;
   width: 100%;
-  height: clamp(260px, 32vw, 460px);
+  height: clamp(100px, 30vw, 300px);
   overflow: hidden;
 }
 .heroImg {
@@ -18,6 +18,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: saturate(1.08) contrast(1.06) brightness(0.9);
 }
 .heroPlaceholder {
   position: absolute;
@@ -38,26 +39,29 @@
   inset: 0;
   display: flex;
   align-items: center;
+  background: linear-gradient(90deg, rgba(7, 24, 41, 0.52) 0%, rgba(7, 24, 41, 0.25) 42%, rgba(7, 24, 41, 0.04) 72%);
 }
 
 .heroKicker {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--white);
   margin: 0 0 12px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .heroTitle {
   font-family: var(--font-display);
-  font-size: clamp(42px, 6vw, 80px);
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--white);
   margin: 0;
   line-height: 1;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.45);
 }
 
 /* ── Intro Section ─────────────────────────── */
@@ -217,7 +221,7 @@
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   background: var(--surface);
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 400 / 147;
 }
 
 .categoryImg {
@@ -234,7 +238,7 @@
 
 .imgFallback {
   background: linear-gradient(135deg, rgba(15, 212, 200, 0.12), rgba(26, 109, 181, 0.10));
-  min-height: 280px;
+  min-height: 137px;
 }
 
 .categoryContent {}
