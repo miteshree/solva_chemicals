@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { brand, capabilitiesDropdown } from "../../assets/js/content.js";
-import logo from "../../assets/images/solva_logo_nav.png";
+import logo from "../../assets/images/Solva Logo Original.svg";
 import styles from "./navbar.module.css";
 
 function useBodyScrollLock(locked) {
