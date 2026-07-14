@@ -1,10 +1,10 @@
 export const brand = {
   name: "Solva Chemicals",
-  tagline: "Global Polymer and Chemical Supply, Built on Expertise.",
+  tagline: "Global Chemical and Polymer Supply, Engineered on Expertise.",
   subtag:
-    "Delivering polymers, specialty chemicals, and material solutions through trusted global partnerships.",
+    "Delivering polymers, polymer films, and specialty chemical solutions through trusted global partnerships.",
   email: "info@solvachemicals.com",
-  phone: "+1 (000) 000-0000",
+  phone: "+1 (604) 621-0107",
   location: "North America • Global coverage",
 };
 
@@ -35,18 +35,28 @@ export const capabilities = [
     icon: "hex",
   },
   {
+    title: "Polymer Films",
+    desc: "High-performance polymer films for flexible packaging, industrial, agricultural, and specialty applications.",
+    icon: "layers",
+  },
+  {
     title: "Specialty Chemicals",
-    desc: "Performance additives and intermediates sourced with a quality-first, compliance-forward approach.",
+    desc: "Performance additives, intermediates with a quality-first, compliance-forward approach.",
     icon: "flask",
   },
   {
+    title: "Soap & Detergent",
+    desc: "Raw materials and specialty ingredients for household, industrial, and personal care cleaning formulations.",
+    icon: "droplets",
+  },
+  {
     title: "Procurement Intelligence",
-    desc: "Substitutions, lead-time planning, and risk-aware sourcing built for fast-moving markets.",
+    desc: "Substitutions, lead-time planning, and risk-aware sourcing built for fast-moving global markets.",
     icon: "signal",
   },
   {
     title: "Logistics & Documentation",
-    desc: "Incoterms-ready coordination, SDS/CoA handling, and export support to keep shipments moving.",
+    desc: "Incoterms-ready coordination, SDS/CoA handling, customs support, and export documentation.",
     icon: "ship",
   },
 ];
