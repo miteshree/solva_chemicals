@@ -76,12 +76,11 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-
-          <Link className={styles.link} to="/products">
-            Products
-          </Link>
           <Link className={styles.link} to="/about-us">
             About Us
+          </Link>     
+          <Link className={styles.link} to="/products">
+            Products
           </Link>
           <Link className={styles.link} to={{ pathname: "/", hash: "#sustainability" }}>
             Sustainability
@@ -136,12 +135,11 @@ export default function Navbar() {
                 ))}
               </div>
             </details>
-
-            <Link className={styles.mobileLink} to="/products" onClick={() => setOpen(false)}>
-              Products
-            </Link>
             <Link className={styles.mobileLink} to="/about-us" onClick={() => setOpen(false)}>
               About Us
+            </Link>    
+            <Link className={styles.mobileLink} to="/products" onClick={() => setOpen(false)}>
+              Products
             </Link>
             <Link
               className={styles.mobileLink}

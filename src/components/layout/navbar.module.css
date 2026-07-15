@@ -36,15 +36,14 @@
 }
 
 .logo {
-  height: 56px;
+  height: 75px;
   width: auto;
-  max-width: 200px;
+  max-width: 220px;
   border-radius: 10px;
   background: transparent;
   padding: 0;
   object-fit: fill;
   filter: saturate(1.05) contrast(1.03);
-  margin-top: 5px;
 }
 
 .brandText {
@@ -345,6 +344,13 @@
     align-items: center;
     justify-content: center;
   }
+  .brand {
+    min-width: 0;
+  }
+  .logo {
+    height: 56px;
+    max-width: 190px;
+  }
   .brandTag {
     display: none;
   }
@@ -353,5 +359,9 @@
 @media (max-width: 520px) {
   .brandText {
     display: none;
+  }
+  .logo {
+    height: 44px;
+    max-width: 160px;
   }
 }
