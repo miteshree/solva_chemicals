@@ -7,7 +7,7 @@ export default function SolutionsBento() {
   const { ref, visible } = useReveal({ threshold: 0.1 });
 
   return (
-    <section id="solutions" className="section">
+    <section id="solutions" className={`section ${styles.section}`}>
       <div className="container">
         <div className="sectionTitle">
           <div>
@@ -82,4 +82,3 @@ material expertise that help customers optimize production processes and improve
     </section>
   );
 }
-

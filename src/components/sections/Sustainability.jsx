@@ -6,7 +6,7 @@ export default function Sustainability() {
   const { ref, visible } = useReveal({ threshold: 0.1 });
 
   return (
-    <section id="sustainability" className="section">
+    <section id="sustainability" className={`section ${styles.section}`}>
       <div className="container">
         <div className="sectionTitle">
           <div>
