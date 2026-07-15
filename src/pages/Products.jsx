@@ -3,11 +3,12 @@ import Footer from "../components/layout/Footer.jsx";
 import useReveal from "../assets/js/hooks/useReveal.js";
 import styles from "../components/sections/products.module.css";
 import polyolefins from "../assets/images/polyolefins.png";
+import soapChemicals from "../assets/images/soap_&_detergent.png";
 import engPolymer from "../assets/images/engPolymer.png";
 import polymerFilms from "../assets/images/polymerFilms2.png";
 import chemicals from "../assets/images/chemicals.jpg";
 import Icon from "../components/ui/Icon.jsx";
-import productHeader from "../assets/images/productHeader2.png";
+import productHeader from "../assets/images/ProductHeader.png";
 
 const masterbatchCards = [
   {
@@ -62,7 +63,28 @@ const categories = [
       "Masterbatches",
     ],
     desc: "These materials support applications requiring higher strength, durability, clarity, and chemical resistance.",
-  },
+  },{
+    id: "soap",
+    title: "Soaps and Detergents Chemicals  ",
+    img: soapChemicals,
+    imgAlt: "Soap and detergent chemicals",
+    items: [
+      "SLES (Sodium Lauryl Ether Sulfate)",
+      "LABSA (Linear Alkylbenzene Sulfonic Acid)",
+      "CAPB (Cocamidopropyl Betaine)",
+    "Caustic Soda",
+    "Soda Ash",
+    "CDEA (Coco Diethanolamide)",
+    "SCMC (Sodium Carboxymethyl Cellulose)",
+    "Talc (Soap Stone)",
+    "Glycerine (99.5% / 99.7%)",
+    "Stearic Acid",
+    "White Oil (Tech / Pharma)",
+    "Calcium Carbonate",
+    "Nonyl Phenol Ethoxylate (NPE)"
+  ],
+  "desc": "These essential raw materials are widely utilized across the manufacturing of soaps, laundry and dishwashing detergents, industrial cleaners, and high-quality personal care formulations."
+},
   {
     id: "polymer-films",
     title: "Polymer Films",
@@ -202,6 +224,7 @@ export default function Products() {
     { id: "specialty-chemicals", label: "Specialty Chemicals", sub: "Adhesives · Coatings · Catalysts" },
     { id: "masterbatches", label: "Masterbatches", sub: "Color · Additive · Filler" },
     { id: "custom-sourcing", label: "Custom Material Sourcing", sub: "Tailored to your requirements" },
+    { id: "soap", label: "Soaps and Detergents Chemicals", sub: "SLES · LABSA · CAPB · Caustic Soda · Soda Ash · CDEA · SCMC · Talc" },
   ].map((item) => (
     <a key={item.id} className={styles.quickCard} href={`#${item.id}`}>
       <div className={styles.quickCardInner}>

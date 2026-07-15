@@ -50,6 +50,22 @@ export default function Hero() {
                 <div className={styles.quickTop}>Logistics</div>
                 <div className={styles.quickBottom}>Global lanes • export-ready</div>
               </div>
+              <div className={styles.quickItem}>
+                <div className={styles.quickTop}>Speciality Chemicals</div>
+                <div className={styles.quickBottom}>Additives • intermediates • compliance</div>
+              </div>
+              <div className={styles.quickItem}>
+                <div className={styles.quickTop}>Soaps & Detergents</div>
+                <div className={styles.quickBottom}>Ingredients for cleaner formulations</div>
+              </div>
+              <div className={styles.quickItem}>
+                <div className={styles.quickTop}>Procurement Intelligence</div>
+                <div className={styles.quickBottom}>Smarter sourcing • lower risk</div>
+              </div>
+              <div className={styles.quickItem}>
+                <div className={styles.quickTop}>Polymer films</div>
+                <div className={styles.quickBottom}>Packaging • industrial • agricultural</div>
+              </div>
             </div>
           </div>
 

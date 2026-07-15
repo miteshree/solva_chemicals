@@ -5,6 +5,75 @@
   margin-top: 18px;
 }
 
+.embla {
+  position: relative;
+  margin-top: 18px;
+}
+
+.emblaViewport {
+  overflow: hidden;
+}
+
+.emblaContainer {
+  display: flex;
+  gap: 14px;
+}
+
+.emblaSlide {
+  flex: 0 0 290px;
+  min-width: 0;
+}
+
+.emblaButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.emblaButton {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(11, 60, 93, 0.92);
+  cursor: pointer;
+}
+
+.emblaButton:hover:not(:disabled) {
+  color: rgba(31, 163, 163, 0.95);
+  border-color: rgba(31, 163, 163, 0.45);
+}
+
+.emblaButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emblaDots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.emblaDot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+}
+
+.activeDot {
+  background: rgba(31, 163, 163, 0.95);
+}
+
 .card {
   padding: 18px;
   position: relative;
@@ -73,10 +142,18 @@
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .emblaSlide {
+    flex-basis: calc(50% - 7px);
+  }
 }
 
 @media (max-width: 560px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .emblaSlide {
+    flex-basis: calc(90.909% - 6px);
   }
 }

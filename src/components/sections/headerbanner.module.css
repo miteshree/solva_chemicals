@@ -6,12 +6,13 @@
 }
 
 .card {
-  border-radius: 0 0 26px 26px;
+  border-radius: 0;
   overflow: hidden;
-  border: none;
+  border: 1px solid var(--border);
   background: transparent;
   box-shadow: none;
   position: relative;
+  /* aspect-ratio: 4 / 3; */
 }
 
 .card::after {
@@ -34,20 +35,19 @@
   opacity: 0.85;
 }
 
+/*Desktop height*/
 .img {
   width: 100%;
-  height: clamp(280px, 34vw, 520px);
+  height: clamp(100px, 30vw, 300px);
   display: block;
   object-fit: cover;
   object-position: center;
   filter: saturate(1.12) contrast(1.05);
 }
 
+/* Mobile height */
 @media (max-width: 720px) {
   .wrap {
     margin-top: -70px;
-  }
-  .img {
-    height: 260px;
   }
 }
