@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { useRef, useEffect, useState } from "react";
 import { capabilities } from "../../assets/js/content.js";
 import useReveal from "../../assets/js/hooks/useReveal.js";
 import Icon from "../ui/Icon.jsx";
@@ -7,33 +6,67 @@ import styles from "./capabilities.module.css";
 
 export default function Capabilities() {
   const { ref, visible } = useReveal({ threshold: 0.1 });
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    dragFree: true,
-    loop: true,
-  });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState([]);
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
 
-  const onSelect = useCallback((api) => {
-    setSelectedIndex(api.selectedScrollSnap());
-    setCanScrollPrev(api.canScrollPrev());
-    setCanScrollNext(api.canScrollNext());
-  }, []);
+  const cardsRef = useRef(null);
 
-  useEffect(() => {
-    if (!emblaApi) return undefined;
+  const [activeDot, setActiveDot] = useState(0);
+  const isDown = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
 
-    setScrollSnaps(emblaApi.scrollSnapList());
-    onSelect(emblaApi);
-    emblaApi.on("select", onSelect).on("reInit", onSelect);
+useEffect(() => {
+  const el = cardsRef.current;
 
-    return () => {
-      emblaApi.off("select", onSelect).off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect]);
+  if (!el) return;
+
+  const handleScroll = () => {
+  const firstCard = el.querySelector(`.${styles.emblaSlide}`);
+
+  if (!firstCard) return;
+
+  const cardWidth = firstCard.offsetWidth + 14; // 14 = gap
+  const index = Math.round(el.scrollLeft / cardWidth);
+
+  setActiveDot(Math.min(index, capabilities.length - 1));
+};
+
+  el.addEventListener("scroll", handleScroll);
+
+  return () => el.removeEventListener("scroll", handleScroll);
+}, []);
+
+const handleMouseDown = (e) => {
+  e.preventDefault();
+
+  const slider = cardsRef.current;
+  if (!slider) return;
+
+  isDown.current = true;
+
+  startX.current = e.clientX;
+  scrollLeft.current = slider.scrollLeft;
+};
+
+const handleMouseLeave = () => {
+  isDown.current = false;
+};
+
+const handleMouseUp = () => {
+  isDown.current = false;
+};
+
+const handleMouseMove = (e) => {
+  if (!isDown.current) return;
+
+  e.preventDefault();
+
+  const slider = cardsRef.current;
+  if (!slider) return;
+
+  const dx = e.clientX - startX.current;
+
+  slider.scrollLeft = scrollLeft.current - dx;
+};
 
   return (
     <section id="capabilities" className="section">
@@ -51,8 +84,17 @@ export default function Capabilities() {
           </div>
         </div>
 
-        <div ref={ref} className={`${styles.embla} reveal ${visible ? "revealVisible" : ""}`}>
-          <div className={styles.emblaViewport} ref={emblaRef}>
+        <div 
+          ref={ref} 
+          className={`${styles.embla} reveal ${visible ? "revealVisible" : ""}`}>
+          <div
+              className={styles.emblaViewport}
+              ref={cardsRef}
+              onMouseDown={handleMouseDown}
+              onMouseLeave={handleMouseLeave}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+            >
             <div className={styles.emblaContainer}>
               {capabilities.map((c) => (
                 <div key={c.title} className={styles.emblaSlide}>
@@ -74,39 +116,32 @@ export default function Capabilities() {
             </div>
           </div>
 
-          <div className={styles.emblaButtons}>
-            <button
-              type="button"
-              className={styles.emblaButton}
-              onClick={() => emblaApi?.scrollPrev()}
-              disabled={!canScrollPrev}
-              aria-label="Previous capability"
-            >
-              <Icon name="chevronLeft" size={20} />
-            </button>
-            <button
-              type="button"
-              className={styles.emblaButton}
-              onClick={() => emblaApi?.scrollNext()}
-              disabled={!canScrollNext}
-              aria-label="Next capability"
-            >
-              <Icon name="chevronRight" size={20} />
-            </button>
-          </div>
 
           <div className={styles.emblaDots} aria-label="Capabilities navigation">
-            {scrollSnaps.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                className={`${styles.emblaDot} ${index === selectedIndex ? styles.activeDot : ""}`}
-                onClick={() => emblaApi?.scrollTo(index)}
-                aria-label={`Go to capability ${index + 1}`}
-                aria-current={index === selectedIndex ? "true" : undefined}
-              />
-            ))}
-          </div>
+  {capabilities.map((_, index) => (
+    <button
+      key={index}
+      type="button"
+      className={`${styles.emblaDot} ${
+        activeDot === index ? styles.activeDot : ""
+      }`}
+      onClick={() => {
+        const el = cardsRef.current;
+        const firstCard = el?.querySelector(`.${styles.emblaSlide}`);
+
+        if (!el || !firstCard) return;
+
+        const cardWidth = firstCard.offsetWidth + 14;
+
+        el.scrollTo({
+          left: cardWidth * index,
+          behavior: "smooth",
+        });
+      }}
+      aria-label={`Go to capability ${index + 1}`}
+    />
+  ))}
+</div>
         </div>
       </div>
     </section>
