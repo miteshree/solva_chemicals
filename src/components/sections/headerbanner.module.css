@@ -47,7 +47,12 @@
 
 /* Mobile height */
 @media (max-width: 720px) {
-  .wrap {
+  /* .wrap {
     margin-top: -70px;
-  }
+    object-fit: contain;
+  } */
+   .img{
+        height:auto;
+        object-fit:contain;
+    }
 }
