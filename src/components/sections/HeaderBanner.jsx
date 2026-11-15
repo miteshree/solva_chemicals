@@ -1,4 +1,4 @@
-import banner from "../../assets/images/web banner.png";
+import banner from "../../assets/images/web banner synrthy .png";
 import mobileBanner from "../../assets/images/mobileBanner.png";
 import styles from "./headerbanner.module.css";
 //import { useState } from "react";
