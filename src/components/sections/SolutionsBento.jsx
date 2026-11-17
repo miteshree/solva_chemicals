@@ -16,7 +16,7 @@ export default function SolutionsBento() {
             </div>
             <h2 className="h2">Technical guidance and material expertise.</h2>
             <p className="lead">
-              At Solva Chemicals Corporation, our role extends beyond supplying materials. We provide technical guidance and
+              At Synrthy Materials Corporation, our role extends beyond supplying materials. We provide technical guidance and
 material expertise that help customers optimize production processes and improve product performance.
             </p>
             <p className="lead">

@@ -16,7 +16,7 @@ export default function Sustainability() {
             <h2 className="h2">Sustainability Commitment</h2>
             <p className="lead">
               The future of the chemical industry depends on responsible innovation and sustainable
-              practices. At Solva Chemicals Corporation, we actively support initiatives that
+              practices. At Synrthy Materials Corporation, we actively support initiatives that
               contribute to a more sustainable and efficient materials ecosystem.
             </p>
           </div>

@@ -13,7 +13,7 @@ console.log("Mobile Banner:", mobileBanner);
   //const [src, setSrc] = useState(banner);
 
   return (
-    <section className={styles.wrap} aria-label="Solva Chemicals header banner">
+    <section className={styles.wrap} aria-label="Synrthy Materials header banner">
       <div className={styles.card}>
         <picture>
           <source 
@@ -23,7 +23,7 @@ console.log("Mobile Banner:", mobileBanner);
         <img
           className={styles.img}
           src={banner}
-          alt="Solva Chemicals — Molecules to Market"
+          alt="Synrthy Materials — Molecules to Market"
           // decoding="async"
           // onError={() => setSrc(banner)}
         />

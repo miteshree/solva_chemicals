@@ -31,14 +31,14 @@ const values = [
   {
     icon: "🌱",
     title: "Sustainability & Responsibility",
-    desc: "We believe the future of the chemical industry must balance performance with environmental responsibility. Solva actively supports sustainable materials, responsible manufacturing practices, and solutions that reduce environmental impact across the value chain.",
+    desc: "We believe the future of the chemical industry must balance performance with environmental responsibility. Synrthy actively supports sustainable materials, responsible manufacturing practices, and solutions that reduce environmental impact across the value chain.",
   },
 ];
 
 const whyChoose = [
   {
     title: "40+ Years of Industry Experience",
-    desc: "Our team brings together decades of hands-on technical and commercial expertise in the chemical and polymer industry — giving customers access to knowledge that goes far beyond basic distribution.",
+    desc: "Our team brings together decades of hands-on technical and commercial expertise in the chemical and polymer industry; giving customers access to knowledge that goes far beyond basic distribution.",
   },
   {
     title: "Global Supplier Network",
@@ -66,9 +66,9 @@ const carouselCards = [
   {
     img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&q=80",
     imgAlt: "Chemical manufacturing facility",
-    tag: "About Solva",
+    tag: "About Synrthy",
     title: "Who Are We?",
-    desc: "Solva Chemicals Corporation is a specialty chemicals and polymer solutions company committed to connecting innovation with industry. We work with manufacturers, processors, and distributors to deliver reliable access to high-quality chemical and polymer products.",
+    desc: "Synrthy Materials Corporation is a specialty chemicals and polymer solutions company committed to connecting innovation with industry. We work with manufacturers, processors, and distributors to deliver reliable access to high-quality chemical and polymer products.",
   },
   {
     img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
@@ -82,7 +82,7 @@ const carouselCards = [
     imgAlt: "Global supply chain and logistics",
     tag: "Our Approach",
     title: "Molecules to Market",
-    desc: "What truly separates Solva from traditional chemical distributors is our customer-first approach. We work closely with every client to develop tailored material solutions aligned with their technical requirements and operational goals.",
+    desc: "What truly separates Synrthy from traditional chemical distributors is our customer-first approach. We work closely with every client to develop tailored material solutions aligned with their technical requirements and operational goals.",
   },
 ];
 
@@ -115,7 +115,7 @@ function WhoWeAreCarousel() {
           <div className="kicker">
             <span className="kickerDot" aria-hidden="true" /> Who We Are
           </div>
-          <h2 className="h2">The people and purpose behind Solva.</h2>
+          <h2 className="h2">The people and purpose behind Synrthy.</h2>
         </div>
 
         <div className={styles.carouselWrap}>
@@ -239,12 +239,12 @@ export default function AboutUs() {
             >
               <div className={styles.whyHead}>
                 <div className="kicker">
-                  <span className="kickerDot" aria-hidden="true" /> Why Solva
+                  <span className="kickerDot" aria-hidden="true" /> Why Synrthy
                 </div>
                 <h2 className="h2">Why Choose Us?</h2>
                 <p className="lead">
-                  We combine deep industry knowledge with a genuine commitment to customer success —
-                  making Solva the partner you can count on for the long term.
+                  We combine deep industry knowledge with a genuine commitment to customer success; 
+                  making Synrthy the partner you can count on for the long term.
                 </p>
               </div>
               <div className={styles.whyGrid}>

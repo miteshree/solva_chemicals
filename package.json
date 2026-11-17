@@ -1,8 +1,8 @@
 {
-  "name": "solva_chemicals",
+  "name": "synrthy_materials",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://solvachemicals.com",
+  "homepage": "https://synrthymaterials.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

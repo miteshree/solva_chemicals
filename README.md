@@ -1,6 +1,6 @@
-# Solva Chemicals — Static React Website
+# Synrthy Materials — Static React Website
 
-Responsive, mobile-friendly static site for **Solva Chemicals** using **React + Vite**.
+Responsive, mobile-friendly static site for **Synrthy Materials** using **React + Vite**.
 
 ## Run locally
 

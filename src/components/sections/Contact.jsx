@@ -40,7 +40,7 @@ export default function Contact() {
   });
 
   const mailto = useMemo(() => {
-    const subject = `Quote Request — ${form.company || "Solva Chemicals"}`;
+    const subject = `Quote Request — ${form.company || "Synrthy Materials"}`;
     const body = toMailtoBody({ ...form, fileName });
     return `mailto:${brand.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       body,

@@ -15,8 +15,7 @@ export default function FAQ() {
             </div>
             <h2 className="h2">Supply Chain &amp; Global Sourcing</h2>
             <p className="lead">
-              The chemical industry depends on reliable sourcing and supply continuity. Solva
-              Chemicals Corporation maintains strong relationships with global producers, logistics
+              The chemical industry depends on reliable sourcing and supply continuity. Synrthy Materials Corporation maintains strong relationships with global producers, logistics
               providers, and regional distributors to ensure dependable material availability.
             </p>
           </div>

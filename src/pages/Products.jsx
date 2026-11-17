@@ -204,11 +204,11 @@ export default function Products() {
             >
               <div className={styles.introLeft}>
                 <div className="kicker">
-                  <span className="kickerDot" aria-hidden="true" /> Solva Chemicals
+                  <span className="kickerDot" aria-hidden="true" /> Synrthy Materials
                 </div>
                 <h2 className="h2">A broad portfolio, built for industry.</h2>
                 <p className="lead">
-                  Solva Chemicals Corporation supplies a broad portfolio of polymer resins, polymer
+                  Synrthy Materials Corporation supplies a broad portfolio of polymer resins, polymer
                   films, and specialty chemicals used across a wide range of industrial and
                   manufacturing applications. Through our global network of suppliers and industry
                   partnerships, we provide reliable material solutions that support production
@@ -310,7 +310,7 @@ export default function Products() {
                 </div>
                 <h2 className={styles.customTitle}>Custom Material Sourcing</h2>
                 <p className={styles.customDesc}>
-                  Through our global network of chemical manufacturers and suppliers, Solva Chemicals
+                  Through our global network of chemical manufacturers and suppliers, Synrthy Materials
                   Corporation helps customers source specialized materials tailored to their specific
                   technical and commercial requirements. Our team works closely with customers to
                   identify reliable solutions that align with their production processes, quality
@@ -335,8 +335,8 @@ export default function Products() {
                 Share your target spec, destination, and timeline — we&apos;ll respond with
                 availability, documentation, and practical next steps.
               </p>
-              <a className="btnPrimary" href="mailto:sales@solvachemicals.com">
-                Contact us at info@solvachemicals.com
+              <a className="btnPrimary" href="mailto:sales@synrthymaterials.com">
+                Contact us at info@synrthymaterials.com
               </a>
             </div>
           </div>

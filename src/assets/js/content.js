@@ -1,9 +1,9 @@
 export const brand = {
-  name: "Solva Chemicals",
+  name: "Synrthy Materials",
   tagline: "Global Chemical and Polymer Supply, Engineered on Expertise.",
   subtag:
     "Delivering polymers, polymer films, and specialty chemical solutions through trusted global partnerships.",
-  email: "info@solvachemicals.com",
+  email: "info@synrthy.com",
   phone: "+1 (604) 621-0107",
   location: "North America • Global coverage",
 };
@@ -109,7 +109,7 @@ export const solutions = [
 
 export const faqs = [
   {
-    q: "What products does Solva Chemicals supply?",
+    q: "What products does Synrthy Materials supply?",
     a: "We support polymer resins and a range of chemical inputs and additives. Share your target spec and end-use, and we’ll propose options with documentation.",
   },
   {
