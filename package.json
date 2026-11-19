@@ -2,7 +2,7 @@
   "name": "synrthy_materials",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://synrthymaterials.com",
+  "homepage": "https://synrthy.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

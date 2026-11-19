@@ -1,14 +1,10 @@
 import banner from "../../assets/images/web banner synrthy .png";
-import mobileBanner from "../../assets/images/mobileBanner.png";
 import styles from "./headerbanner.module.css";
 //import { useState } from "react";
 
 
 
 export default function HeaderBanner() {
-
-  console.log("Web Banner:", banner);
-console.log("Mobile Banner:", mobileBanner);
 
   //const [src, setSrc] = useState(banner);
 
@@ -18,7 +14,7 @@ console.log("Mobile Banner:", mobileBanner);
         <picture>
           <source 
             media="(max-width: 720px)" 
-            srcSet={mobileBanner} 
+            srcSet={banner} 
           />
         <img
           className={styles.img}

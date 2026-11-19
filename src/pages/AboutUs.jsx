@@ -94,7 +94,7 @@ function WhoWeAreCarousel() {
   const startAuto = () => {
     intervalRef.current = setInterval(() => {
       setCurrent((c) => (c + 1) % total);
-    }, 3500);
+    }, 6000);
   };
 
   useEffect(() => {
